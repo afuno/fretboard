@@ -2,9 +2,9 @@ require 'terminal-table'
 
 module Fretboard
   class Builder
-    # result = Fretboard::Builder.new(:STANDART)
-    # result = result.build
-    # result = result.draw
+    # fretboard = Fretboard::Builder.new(:standart)
+    # fretboard.build
+    # fretboard.draw
 
     def self.build(tuning, number_of_frets = 12)
       new(tuning, number_of_frets).build
@@ -41,7 +41,11 @@ module Fretboard
         @result[string_number][0] = current_note
 
         (1..@number_of_frets).each do |fret|
-          next_note = Fretboard::Note.next_for(current_note)
+          next_note = Fretboard::Note.next_for(
+            current_note,
+            sharp_or_flat: :both,
+            formated: true
+          )
 
           puts "Fret: #{fret} (#{next_note})"
 
@@ -70,7 +74,7 @@ module Fretboard
 
         string_notes.except(0).each_pair do |fret, note|
           headings << fret
-          row << Fretboard::Note.formated(note)
+          row << note
         end
 
         rows << row
