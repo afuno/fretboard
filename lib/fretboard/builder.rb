@@ -112,6 +112,11 @@ module Fretboard
     end
 
     def draw(sharp_or_flat: :both)
+      unless @data.any?
+        Fretboard::Console.danger('Create the data')
+        return
+      end
+
       headings = []
       rows = []
 
