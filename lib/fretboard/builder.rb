@@ -1,4 +1,4 @@
-require 'terminal-table'
+require 'fretboard/console'
 
 module Fretboard
   class Builder
@@ -36,7 +36,7 @@ module Fretboard
 
     def build
       unless Fretboard::Tunings.exists?(@tuning)
-        puts 'Unable to detect guitar tuning'
+        Fretboard::Console.danger('Unable to detect guitar tuning')
         return
       end
 
@@ -97,13 +97,7 @@ module Fretboard
         rows << row
       end
 
-      table = Terminal::Table.new(
-        headings: headings.uniq,
-        rows: rows,
-        style: { border_x: '~', border_i: '~' }
-      )
-
-      puts table
+      Fretboard::Console.print_table(headings.uniq, rows)
 
       nil
     end
