@@ -30,9 +30,7 @@ module Fretboard
     def formated
       result = @note
 
-      if result.include?('sharp')
-        result = result.gsub('sharp', '#')
-      end
+      result = result.gsub('sharp', '#') if result.include?('sharp')
 
       if result.include?('flat')
         result = result.gsub('flat', 'b') # ♭

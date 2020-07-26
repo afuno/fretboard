@@ -39,13 +39,13 @@ module Fretboard
         result = value
 
         if value.is_a?(Array)
-          if sharp_or_flat == :both
-            result = value.join('/')
-          elsif sharp_or_flat == :sharp
-            result = value.first
-          else
-            result = value.last
-          end
+          result = if sharp_or_flat == :both
+                     value.join('/')
+                   elsif sharp_or_flat == :sharp
+                     value.first
+                   else
+                     value.last
+                   end
         end
 
         if formated
