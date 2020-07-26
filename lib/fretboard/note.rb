@@ -4,8 +4,11 @@ module Fretboard
   class Note
     # Fretboard::Note.next_for('C')
 
-    def self.next_for(note)
-      all_notes = Fretboard::Notes.all
+    def self.next_for(note, sharp_or_flat: :sharp, formated: false)
+      all_notes = Fretboard::Notes.all(
+        sharp_or_flat,
+        formated: formated
+      )
 
       current_index = all_notes.find_index(note)
       next_index = current_index + 1
@@ -25,13 +28,17 @@ module Fretboard
     end
 
     def formated
-      if @note.include?('sharp')
-        return @note.sub('sharp', '#').sub(' ', '')
-      elsif @note.include?('sharp')
-        return @note.sub('flat', '♭').sub(' ', '')
+      result = @note
+
+      if result.include?('sharp')
+        result = result.gsub('sharp', '#')
       end
 
-      @note
+      if result.include?('flat')
+        result = result.gsub('flat', 'b') # ♭
+      end
+
+      result.gsub(' ', '')
     end
   end
 end

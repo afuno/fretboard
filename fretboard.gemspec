@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Tools for working with the guitar fretboard'
   spec.description   = 'Tools for working with the guitar fretboard'
 
-  spec.files         = `git ls-files -z *.md *.gemspec bin lib`.split("\x0")
+  spec.files         = `git ls-files -z *.md *.gemspec bin lib images`.split("\x0")
   spec.require_paths = ['lib']
 
   # spec.executables   = ['fretboard']

@@ -2,19 +2,23 @@ require 'terminal-table'
 
 module Fretboard
   class Builder
-    # result = Fretboard::Builder.new(:STANDART)
-    # result = result.build
-    # result = result.draw
+    # fretboard = Fretboard::Builder.new(:standart)
+    # fretboard = Fretboard::Builder.standart
+    # fretboard.build
+    # fretboard.data
+    # fretboard.draw
 
-    def self.build(tuning, number_of_frets = 12)
-      new(tuning, number_of_frets).build
+    attr_reader :data
+
+    def self.standart(number_of_frets = 12)
+      new(:standart, number_of_frets)
     end
 
     def initialize(tuning, number_of_frets = 12)
       @tuning = tuning.upcase.to_sym
       @number_of_frets = number_of_frets
 
-      @result = {}
+      @data = {}
     end
 
     def build
@@ -34,18 +38,22 @@ module Fretboard
 
         current_note = strings[string_number][:NOTE]
 
-        @result[string_number] = {}
+        @data[string_number] = {}
 
         puts "Fret: 0 (#{current_note})"
 
-        @result[string_number][0] = current_note
+        @data[string_number][0] = current_note
 
         (1..@number_of_frets).each do |fret|
-          next_note = Fretboard::Note.next_for(current_note)
+          next_note = Fretboard::Note.next_for(
+            current_note,
+            sharp_or_flat: :both,
+            formated: true
+          )
 
           puts "Fret: #{fret} (#{next_note})"
 
-          @result[string_number][fret] = next_note
+          @data[string_number][fret] = next_note
 
           current_note = next_note
         end
@@ -59,7 +67,7 @@ module Fretboard
       headings = []
       rows = []
 
-      @result.each_pair do |string_number, string_notes|
+      @data.each_pair do |string_number, string_notes|
         row = []
 
         headings << '№'
@@ -68,29 +76,19 @@ module Fretboard
         headings << 0
         row << string_notes[0]
 
-        string = "#{string_number}. #{string_notes[0]} | "
-
         string_notes.except(0).each_pair do |fret, note|
-          string << '|' if fret > 1
-
-          string << " #{Fretboard::Note.formated(note)} "
-
           headings << fret
-          row << Fretboard::Note.formated(note)
+          row << note
         end
 
         rows << row
-
-        puts string
       end
 
-      # puts
-      # puts headings.inspect
-      # puts
-      # puts rows.inspect
-      # puts
-
-      table = Terminal::Table.new(headings: headings.uniq, rows: rows, style: { border_x: '~', border_i: '~' })
+      table = Terminal::Table.new(
+        headings: headings.uniq,
+        rows: rows,
+        style: { border_x: '~', border_i: '~' }
+      )
 
       puts table
 

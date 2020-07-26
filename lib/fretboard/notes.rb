@@ -1,6 +1,8 @@
 module Fretboard
   class Notes
-    # Fretboard::Notes.all
+    # Fretboard::Notes.all(:both)
+    # Fretboard::Notes.all(:sharp)
+    # Fretboard::Notes.all(:flat)
 
     BASIS_NOTES = {
       1 => 'C',
@@ -17,7 +19,7 @@ module Fretboard
       6 => 'F',
       7 => [
         'F sharp',
-        'D flat'
+        'G flat'
       ],
       8 => 'G',
       9 => [
@@ -32,16 +34,24 @@ module Fretboard
       12 => 'B'
     }.freeze
 
-    def self.all(sharp_or_flat = :sharp)
+    def self.all(sharp_or_flat = :sharp, formated: false)
       BASIS_NOTES.map do |_key, value|
+        result = value
+
         if value.is_a?(Array)
-          if sharp_or_flat == :sharp
-            value.first
+          if sharp_or_flat == :both
+            result = value.join('/')
+          elsif sharp_or_flat == :sharp
+            result = value.first
           else
-            value.last
+            result = value.last
           end
+        end
+
+        if formated
+          Fretboard::Note.formated(result)
         else
-          value
+          result
         end
       end
     end
