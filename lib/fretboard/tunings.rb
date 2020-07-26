@@ -126,6 +126,41 @@ module Fretboard
             SPN: 'D2'
           }
         }
+      },
+
+      OPEN_D: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D',
+            SPN: 'D4'
+          },
+          2 => {
+            NOTE: 'A',
+            SPN: 'A3'
+          },
+          3 => {
+            NOTE: [
+              'F#',
+              'Gb'
+            ],
+            SPN: [
+              'F#3',
+              'Gb3'
+            ]
+          },
+          4 => {
+            NOTE: 'D',
+            SPN: 'D3'
+          },
+          5 => {
+            NOTE: 'A',
+            SPN: 'A2'
+          },
+          6 => {
+            NOTE: 'D',
+            SPN: 'D2'
+          }
+        }
       }
     }.freeze
 
