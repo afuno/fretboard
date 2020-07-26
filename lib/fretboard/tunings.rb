@@ -1,7 +1,7 @@
 module Fretboard
   class Tunings
     # Fretboard::Tunings.get(:standart)
-    # Fretboard::Tunings.standart
+    # Fretboard::Tunings.exists?(:standart)
 
     # SPN   =>  Scientific pitch notation
 
