@@ -4,7 +4,10 @@ module Fretboard
   class Builder
     # fretboard = Fretboard::Builder.new(:standart)
     # fretboard.build
+    # fretboard.data
     # fretboard.draw
+
+    attr_reader :data
 
     def self.build(tuning, number_of_frets = 12)
       new(tuning, number_of_frets).build
@@ -14,7 +17,7 @@ module Fretboard
       @tuning = tuning.upcase.to_sym
       @number_of_frets = number_of_frets
 
-      @result = {}
+      @data = {}
     end
 
     def build
@@ -34,11 +37,11 @@ module Fretboard
 
         current_note = strings[string_number][:NOTE]
 
-        @result[string_number] = {}
+        @data[string_number] = {}
 
         puts "Fret: 0 (#{current_note})"
 
-        @result[string_number][0] = current_note
+        @data[string_number][0] = current_note
 
         (1..@number_of_frets).each do |fret|
           next_note = Fretboard::Note.next_for(
@@ -49,7 +52,7 @@ module Fretboard
 
           puts "Fret: #{fret} (#{next_note})"
 
-          @result[string_number][fret] = next_note
+          @data[string_number][fret] = next_note
 
           current_note = next_note
         end
@@ -63,7 +66,7 @@ module Fretboard
       headings = []
       rows = []
 
-      @result.each_pair do |string_number, string_notes|
+      @data.each_pair do |string_number, string_notes|
         row = []
 
         headings << '№'

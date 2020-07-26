@@ -26,6 +26,12 @@ Creating the fretboard data:
 fretboard.build
 ```
 
+Get the created data:
+
+```ruby
+fretboard.data
+```
+
 Drawing the fretboard in the console:
 
 ```ruby
