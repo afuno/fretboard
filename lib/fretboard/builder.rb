@@ -3,14 +3,15 @@ require 'terminal-table'
 module Fretboard
   class Builder
     # fretboard = Fretboard::Builder.new(:standart)
+    # fretboard = Fretboard::Builder.standart
     # fretboard.build
     # fretboard.data
     # fretboard.draw
 
     attr_reader :data
 
-    def self.build(tuning, number_of_frets = 12)
-      new(tuning, number_of_frets).build
+    def self.standart(number_of_frets = 12)
+      new(:standart, number_of_frets)
     end
 
     def initialize(tuning, number_of_frets = 12)

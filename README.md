@@ -18,6 +18,8 @@ gem 'fretboard'
 
 ```ruby
 fretboard = Fretboard::Builder.new(:standart)
+# or
+fretboard = Fretboard::Builder.standart
 ```
 
 Creating the fretboard data:
