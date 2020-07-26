@@ -20,6 +20,8 @@ fretboard = Fretboard::Builder.new(:standart)
 fretboard = Fretboard::Builder.standart
 ```
 
+[Available tunings](#available-tunings)
+
 Creating the fretboard data:
 
 ```ruby
