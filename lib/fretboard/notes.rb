@@ -1,8 +1,8 @@
 module Fretboard
   class Notes
     # Fretboard::Notes.all(:both)
-    # Fretboard::Notes.all(:#)
-    # Fretboard::Notes.all(:b)
+    # Fretboard::Notes.all(:sharp)
+    # Fretboard::Notes.all(:flat)
 
     BASIS_NOTES = {
       1 => 'C',
