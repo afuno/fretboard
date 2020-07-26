@@ -128,6 +128,35 @@ module Fretboard
         }
       },
 
+      OPEN_C: {
+        STRINGS: {
+          1 => {
+            NOTE: 'E',
+            SPN: 'E4'
+          },
+          2 => {
+            NOTE: 'C',
+            SPN: 'C4'
+          },
+          3 => {
+            NOTE: 'G',
+            SPN: 'G3'
+          },
+          4 => {
+            NOTE: 'C',
+            SPN: 'C3'
+          },
+          5 => {
+            NOTE: 'G',
+            SPN: 'G2'
+          },
+          6 => {
+            NOTE: 'C',
+            SPN: 'C2'
+          }
+        }
+      },
+
       OPEN_D: {
         STRINGS: {
           1 => {
