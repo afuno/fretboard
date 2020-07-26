@@ -7,6 +7,7 @@ module Fretboard
     # fretboard = Fretboard::Builder.drop_c
     # fretboard = Fretboard::Builder.drop_d
     # fretboard = Fretboard::Builder.double_drop_d
+    # fretboard = Fretboard::Builder.open_d
 
     # fretboard.build
     # fretboard.data
@@ -32,6 +33,10 @@ module Fretboard
       new(:double_drop_d, number_of_frets)
     end
 
+    def self.open_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_d, number_of_frets)
+    end
+
     def initialize(tuning, number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       @tuning = tuning.upcase.to_sym
       @number_of_frets = number_of_frets
@@ -39,7 +44,7 @@ module Fretboard
       @data = {}
     end
 
-    def build
+    def build(sharp_or_flat: :both)
       unless Fretboard::Tunings.exists?(@tuning)
         Fretboard::Console.danger('Unable to detect guitar tuning')
         return
@@ -65,8 +70,7 @@ module Fretboard
         (1..@number_of_frets).each do |fret|
           next_note = Fretboard::Note.next_for(
             current_note,
-            sharp_or_flat: :both,
-            formated: true
+            sharp_or_flat: sharp_or_flat
           )
 
           puts "Fret: #{fret} (#{next_note})"
@@ -81,7 +85,7 @@ module Fretboard
       puts 'done'
     end
 
-    def draw
+    def draw(sharp_or_flat: :both)
       headings = []
       rows = []
 
@@ -92,7 +96,20 @@ module Fretboard
         row << string_number
 
         headings << 0
-        row << string_notes[0]
+
+        open_note = string_notes[0]
+
+        if open_note.is_a?(Array)
+          open_note = if sharp_or_flat == :both
+                     open_note.join('/')
+                   elsif sharp_or_flat == :sharp
+                     open_note.first
+                   else
+                     open_note.last
+                   end
+        end
+
+        row << open_note
 
         string_notes.except(0).each_pair do |fret, note|
           headings << fret
