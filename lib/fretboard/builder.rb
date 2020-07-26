@@ -4,8 +4,7 @@ module Fretboard
   class Builder
     # fretboard = Fretboard::Builder.new(:standart)
     # fretboard = Fretboard::Builder.standart
-
-    # fretboard = Fretboard::Builder.new(:drop_d)
+    # fretboard = Fretboard::Builder.drop_c
     # fretboard = Fretboard::Builder.drop_d
 
     # fretboard.build
@@ -16,6 +15,10 @@ module Fretboard
 
     def self.standart(number_of_frets = 12)
       new(:standart, number_of_frets)
+    end
+
+    def self.drop_c(number_of_frets = 12)
+      new(:drop_c, number_of_frets)
     end
 
     def self.drop_d(number_of_frets = 12)

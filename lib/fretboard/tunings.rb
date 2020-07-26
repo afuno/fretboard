@@ -41,6 +41,35 @@ module Fretboard
         }
       },
 
+      DROP_C: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D',
+            SPN: 'D4'
+          },
+          2 => {
+            NOTE: 'A',
+            SPN: 'A3'
+          },
+          3 => {
+            NOTE: 'F',
+            SPN: 'F3'
+          },
+          4 => {
+            NOTE: 'C',
+            SPN: 'C3'
+          },
+          5 => {
+            NOTE: 'G',
+            SPN: 'G2'
+          },
+          6 => {
+            NOTE: 'C',
+            SPN: 'C2'
+          }
+        }
+      },
+
       DROP_D: {
         STRINGS: {
           1 => {
