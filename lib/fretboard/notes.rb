@@ -19,7 +19,7 @@ module Fretboard
       6 => 'F',
       7 => [
         'F sharp',
-        'D flat'
+        'G flat'
       ],
       8 => 'G',
       9 => [
