@@ -2,8 +2,6 @@
 
 Tools for working with the guitar fretboard.
 
-![Demo](https://raw.githubusercontent.com/afuno/fretboard/dev/images/demo1.png)
-
 [Documentation](https://www.rubydoc.info/gems/fretboard)
 
 ## Installation
