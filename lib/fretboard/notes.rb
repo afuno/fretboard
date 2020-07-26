@@ -7,34 +7,34 @@ module Fretboard
     BASIS_NOTES = {
       1 => 'C',
       2 => [
-        'C sharp',
-        'D flat'
+        'C#',
+        'Db'
       ],
       3 => 'D',
       4 => [
-        'D sharp',
-        'E flat'
+        'D#',
+        'Eb'
       ],
       5 => 'E',
       6 => 'F',
       7 => [
-        'F sharp',
-        'G flat'
+        'F#',
+        'Gb'
       ],
       8 => 'G',
       9 => [
-        'G sharp',
-        'A flat'
+        'G#',
+        'Ab'
       ],
       10 => 'A',
       11 => [
-        'A sharp',
-        'B flat'
+        'A#',
+        'Bb'
       ],
       12 => 'B'
     }.freeze
 
-    def self.all(sharp_or_flat = :sharp, formated: false)
+    def self.all(sharp_or_flat = :sharp)
       BASIS_NOTES.map do |_key, value|
         result = value
 
@@ -48,11 +48,7 @@ module Fretboard
                    end
         end
 
-        if formated
-          Fretboard::Note.formated(result)
-        else
-          result
-        end
+        result
       end
     end
 
