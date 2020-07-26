@@ -68,27 +68,13 @@ module Fretboard
         headings << 0
         row << string_notes[0]
 
-        string = "#{string_number}. #{string_notes[0]} | "
-
         string_notes.except(0).each_pair do |fret, note|
-          string << '|' if fret > 1
-
-          string << " #{Fretboard::Note.formated(note)} "
-
           headings << fret
           row << Fretboard::Note.formated(note)
         end
 
         rows << row
-
-        puts string
       end
-
-      # puts
-      # puts headings.inspect
-      # puts
-      # puts rows.inspect
-      # puts
 
       table = Terminal::Table.new(headings: headings.uniq, rows: rows, style: { border_x: '~', border_i: '~' })
 
