@@ -6,6 +6,7 @@ module Fretboard
     # fretboard = Fretboard::Builder.standart
     # fretboard = Fretboard::Builder.drop_c
     # fretboard = Fretboard::Builder.drop_d
+    # fretboard = Fretboard::Builder.double_drop_d
 
     # fretboard.build
     # fretboard.data
@@ -25,6 +26,10 @@ module Fretboard
 
     def self.drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:drop_d, number_of_frets)
+    end
+
+    def self.double_drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:double_drop_d, number_of_frets)
     end
 
     def initialize(tuning, number_of_frets = DEFAULT_NUMBER_OF_FRETS)
