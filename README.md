@@ -56,4 +56,7 @@ fretboard.draw
 ### Available tunings:
 
 - Standart (`standart`)
+- Drop C (`drop_c`)
 - Drop D (`drop_d`)
+- Double Drop D (`double_drop_d`)
+- Open D (`open_d`)
