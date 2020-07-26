@@ -13,12 +13,12 @@ module Fretboard
 
       if note.is_a?(Array)
         note = if sharp_or_flat == :both
-                   note.join('/')
-                 elsif sharp_or_flat == :sharp
-                   note.first
-                 else
-                   note.last
-                 end
+                 note.join('/')
+               elsif sharp_or_flat == :sharp
+                 note.first
+               else
+                 note.last
+               end
       end
 
       current_index = all_notes.find_index(note)

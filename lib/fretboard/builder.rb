@@ -101,12 +101,12 @@ module Fretboard
 
         if open_note.is_a?(Array)
           open_note = if sharp_or_flat == :both
-                     open_note.join('/')
-                   elsif sharp_or_flat == :sharp
-                     open_note.first
-                   else
-                     open_note.last
-                   end
+                        open_note.join('/')
+                      elsif sharp_or_flat == :sharp
+                        open_note.first
+                      else
+                        open_note.last
+                      end
         end
 
         row << open_note
