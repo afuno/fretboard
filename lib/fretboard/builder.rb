@@ -22,12 +22,12 @@ module Fretboard
     end
 
     def build
-      unless Fretboard::Constants::GUITAR_TUNINGS.key?(@tuning)
+      unless Fretboard::Tunings.exists?(@tuning)
         puts 'Unable to detect guitar tuning'
         return
       end
 
-      tuning = Fretboard::Constants::GUITAR_TUNINGS[@tuning]
+      tuning = Fretboard::Tunings.get(@tuning)
       strings = tuning[:STRINGS]
       number_of_strings = strings.size
 
