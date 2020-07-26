@@ -76,7 +76,11 @@ module Fretboard
         rows << row
       end
 
-      table = Terminal::Table.new(headings: headings.uniq, rows: rows, style: { border_x: '~', border_i: '~' })
+      table = Terminal::Table.new(
+        headings: headings.uniq,
+        rows: rows,
+        style: { border_x: '~', border_i: '~' }
+      )
 
       puts table
 
