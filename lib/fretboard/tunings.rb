@@ -10,33 +10,62 @@ module Fretboard
         STRINGS: {
           1 => {
             NOTE: 'E',
-            FREQUENCY: '329.63 Hz',
+            # FREQUENCY: '329.63 Hz',
             SPN: 'E4'
           },
           2 => {
             NOTE: 'B',
-            FREQUENCY: '246.94 Hz',
+            # FREQUENCY: '246.94 Hz',
             SPN: 'B3'
           },
           3 => {
             NOTE: 'G',
-            FREQUENCY: '196.00 Hz',
+            # FREQUENCY: '196.00 Hz',
             SPN: 'G3'
           },
           4 => {
             NOTE: 'D',
-            FREQUENCY: '146.83 Hz',
+            # FREQUENCY: '146.83 Hz',
             SPN: 'D3'
           },
           5 => {
             NOTE: 'A',
-            FREQUENCY: '110.00 Hz',
+            # FREQUENCY: '110.00 Hz',
             SPN: 'A2'
           },
           6 => {
             NOTE: 'E',
-            FREQUENCY: '82.41 Hz',
+            # FREQUENCY: '82.41 Hz',
             SPN: 'E2'
+          }
+        }
+      },
+
+      DROP_D: {
+        STRINGS: {
+          1 => {
+            NOTE: 'E',
+            SPN: 'E4'
+          },
+          2 => {
+            NOTE: 'B',
+            SPN: 'B3'
+          },
+          3 => {
+            NOTE: 'G',
+            SPN: 'G3'
+          },
+          4 => {
+            NOTE: 'D',
+            SPN: 'D3'
+          },
+          5 => {
+            NOTE: 'A',
+            SPN: 'A2'
+          },
+          6 => {
+            NOTE: 'D',
+            SPN: 'D2'
           }
         }
       }

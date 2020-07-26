@@ -55,4 +55,5 @@ fretboard.draw
 
 ### Available tunings:
 
-- standart
+- Standart (`standart`)
+- Drop D (`drop_d`)
