@@ -15,7 +15,21 @@ module Fretboard
 
     DEFAULT_NUMBER_OF_FRETS = 12
 
+    # METHODS_NAMES = %i[
+    #   standart
+    #   drop_c
+    #   drop_d
+    #   double_drop_d
+    #   open_d
+    # ].freeze
+
     attr_reader :data
+
+    # METHODS_NAMES.each do |method_name|
+    #   define_method(method_name) do |number_of_frets = DEFAULT_NUMBER_OF_FRETS|
+    #     new(method_name, number_of_frets)
+    #   end
+    # end
 
     def self.standart(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:standart, number_of_frets)
