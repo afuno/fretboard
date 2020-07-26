@@ -11,21 +11,23 @@ module Fretboard
     # fretboard.data
     # fretboard.draw
 
+    DEFAULT_NUMBER_OF_FRETS = 12
+
     attr_reader :data
 
-    def self.standart(number_of_frets = 12)
+    def self.standart(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:standart, number_of_frets)
     end
 
-    def self.drop_c(number_of_frets = 12)
+    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:drop_c, number_of_frets)
     end
 
-    def self.drop_d(number_of_frets = 12)
+    def self.drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:drop_d, number_of_frets)
     end
 
-    def initialize(tuning, number_of_frets = 12)
+    def initialize(tuning, number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       @tuning = tuning.upcase.to_sym
       @number_of_frets = number_of_frets
 
