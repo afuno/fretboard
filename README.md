@@ -29,3 +29,7 @@ Drawing the fretboard in the console:
 ```ruby
 fretboard.draw
 ```
+
+### Available tunings:
+
+- standart
