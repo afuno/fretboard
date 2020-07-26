@@ -61,3 +61,4 @@ fretboard.draw
 - Double Drop D (`double_drop_d`)
 - Open C (`open_c`)
 - Open D (`open_d`)
+- Open G (`open_g`)

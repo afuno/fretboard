@@ -9,6 +9,7 @@ module Fretboard
     # fretboard = Fretboard::Builder.double_drop_d
     # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.open_d
+    # fretboard = Fretboard::Builder.open_g
 
     # fretboard.build
     # fretboard.data
@@ -23,6 +24,7 @@ module Fretboard
     #   double_drop_d
     #   open_c
     #   open_d
+    #   open_g
     # ].freeze
 
     attr_reader :data
@@ -55,6 +57,10 @@ module Fretboard
 
     def self.open_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_d, number_of_frets)
+    end
+
+    def self.open_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_g, number_of_frets)
     end
 
     def initialize(tuning, number_of_frets = DEFAULT_NUMBER_OF_FRETS)
