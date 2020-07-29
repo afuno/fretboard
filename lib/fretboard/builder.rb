@@ -1,3 +1,5 @@
+# require 'active_support/core_ext/hash'
+
 require 'fretboard/console'
 
 module Fretboard
@@ -7,9 +9,14 @@ module Fretboard
     # fretboard = Fretboard::Builder.drop_c
     # fretboard = Fretboard::Builder.drop_d
     # fretboard = Fretboard::Builder.double_drop_d
+    # fretboard = Fretboard::Builder.open_a
     # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.open_d
+    # fretboard = Fretboard::Builder.open_d_minor
     # fretboard = Fretboard::Builder.open_g
+    # fretboard = Fretboard::Builder.open_g_minor
+    # fretboard = Fretboard::Builder.modal_d
+    # fretboard = Fretboard::Builder.modal_g
 
     # fretboard.build
     # fretboard.data
@@ -22,9 +29,14 @@ module Fretboard
     #   drop_c
     #   drop_d
     #   double_drop_d
+    #   open_a
     #   open_c
     #   open_d
+    #   open_d_minor
     #   open_g
+    #   open_g_minor
+    #   modal_d
+    #   modal_g
     # ].freeze
 
     attr_reader :data
@@ -51,6 +63,10 @@ module Fretboard
       new(:double_drop_d, number_of_frets)
     end
 
+    def self.open_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_a, number_of_frets)
+    end
+
     def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_c, number_of_frets)
     end
@@ -59,8 +75,24 @@ module Fretboard
       new(:open_d, number_of_frets)
     end
 
+    def self.open_d_minor(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_d_minor, number_of_frets)
+    end
+
     def self.open_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_g, number_of_frets)
+    end
+
+    def self.open_g_minor(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_g_minor, number_of_frets)
+    end
+
+    def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:modal_d, number_of_frets)
+    end
+
+    def self.modal_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:modal_g, number_of_frets)
     end
 
     def initialize(tuning, number_of_frets = DEFAULT_NUMBER_OF_FRETS)

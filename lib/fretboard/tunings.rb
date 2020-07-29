@@ -3,40 +3,26 @@ module Fretboard
     # Fretboard::Tunings.get(:standart)
     # Fretboard::Tunings.exists?(:standart)
 
-    # SPN   =>  Scientific pitch notation
-
     TUNINGS = {
       STANDART: {
         STRINGS: {
           1 => {
-            NOTE: 'E',
-            # FREQUENCY: '329.63 Hz',
-            SPN: 'E4'
+            NOTE: 'E'
           },
           2 => {
-            NOTE: 'B',
-            # FREQUENCY: '246.94 Hz',
-            SPN: 'B3'
+            NOTE: 'B'
           },
           3 => {
-            NOTE: 'G',
-            # FREQUENCY: '196.00 Hz',
-            SPN: 'G3'
+            NOTE: 'G'
           },
           4 => {
-            NOTE: 'D',
-            # FREQUENCY: '146.83 Hz',
-            SPN: 'D3'
+            NOTE: 'D'
           },
           5 => {
-            NOTE: 'A',
-            # FREQUENCY: '110.00 Hz',
-            SPN: 'A2'
+            NOTE: 'A'
           },
           6 => {
-            NOTE: 'E',
-            # FREQUENCY: '82.41 Hz',
-            SPN: 'E2'
+            NOTE: 'E'
           }
         }
       },
@@ -44,28 +30,22 @@ module Fretboard
       DROP_C: {
         STRINGS: {
           1 => {
-            NOTE: 'D',
-            SPN: 'D4'
+            NOTE: 'D'
           },
           2 => {
-            NOTE: 'A',
-            SPN: 'A3'
+            NOTE: 'A'
           },
           3 => {
-            NOTE: 'F',
-            SPN: 'F3'
+            NOTE: 'F'
           },
           4 => {
-            NOTE: 'C',
-            SPN: 'C3'
+            NOTE: 'C'
           },
           5 => {
-            NOTE: 'G',
-            SPN: 'G2'
+            NOTE: 'G'
           },
           6 => {
-            NOTE: 'C',
-            SPN: 'C2'
+            NOTE: 'C'
           }
         }
       },
@@ -73,28 +53,22 @@ module Fretboard
       DROP_D: {
         STRINGS: {
           1 => {
-            NOTE: 'E',
-            SPN: 'E4'
+            NOTE: 'E'
           },
           2 => {
-            NOTE: 'B',
-            SPN: 'B3'
+            NOTE: 'B'
           },
           3 => {
-            NOTE: 'G',
-            SPN: 'G3'
+            NOTE: 'G'
           },
           4 => {
-            NOTE: 'D',
-            SPN: 'D3'
+            NOTE: 'D'
           },
           5 => {
-            NOTE: 'A',
-            SPN: 'A2'
+            NOTE: 'A'
           },
           6 => {
-            NOTE: 'D',
-            SPN: 'D2'
+            NOTE: 'D'
           }
         }
       },
@@ -102,28 +76,48 @@ module Fretboard
       DOUBLE_DROP_D: {
         STRINGS: {
           1 => {
-            NOTE: 'D',
-            SPN: 'D4'
+            NOTE: 'D'
           },
           2 => {
-            NOTE: 'B',
-            SPN: 'B3'
+            NOTE: 'B'
           },
           3 => {
-            NOTE: 'G',
-            SPN: 'G3'
+            NOTE: 'G'
           },
           4 => {
-            NOTE: 'D',
-            SPN: 'D3'
+            NOTE: 'D'
           },
           5 => {
-            NOTE: 'A',
-            SPN: 'A2'
+            NOTE: 'A'
           },
           6 => {
-            NOTE: 'D',
-            SPN: 'D2'
+            NOTE: 'D'
+          }
+        }
+      },
+
+      OPEN_A: {
+        STRINGS: {
+          1 => {
+            NOTE: 'E'
+          },
+          2 => {
+            NOTE: 'A'
+          },
+          3 => {
+            NOTE: 'E'
+          },
+          4 => {
+            NOTE: [
+              'C#',
+              'Db'
+            ]
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'E'
           }
         }
       },
@@ -131,28 +125,22 @@ module Fretboard
       OPEN_C: {
         STRINGS: {
           1 => {
-            NOTE: 'E',
-            SPN: 'E4'
+            NOTE: 'E'
           },
           2 => {
-            NOTE: 'C',
-            SPN: 'C4'
+            NOTE: 'C'
           },
           3 => {
-            NOTE: 'G',
-            SPN: 'G3'
+            NOTE: 'G'
           },
           4 => {
-            NOTE: 'C',
-            SPN: 'C3'
+            NOTE: 'C'
           },
           5 => {
-            NOTE: 'G',
-            SPN: 'G2'
+            NOTE: 'G'
           },
           6 => {
-            NOTE: 'C',
-            SPN: 'C2'
+            NOTE: 'C'
           }
         }
       },
@@ -160,34 +148,48 @@ module Fretboard
       OPEN_D: {
         STRINGS: {
           1 => {
-            NOTE: 'D',
-            SPN: 'D4'
+            NOTE: 'D'
           },
           2 => {
-            NOTE: 'A',
-            SPN: 'A3'
+            NOTE: 'A'
           },
           3 => {
             NOTE: [
               'F#',
               'Gb'
-            ],
-            SPN: [
-              'F#3',
-              'Gb3'
             ]
           },
           4 => {
-            NOTE: 'D',
-            SPN: 'D3'
+            NOTE: 'D'
           },
           5 => {
-            NOTE: 'A',
-            SPN: 'A2'
+            NOTE: 'A'
           },
           6 => {
-            NOTE: 'D',
-            SPN: 'D2'
+            NOTE: 'D'
+          }
+        }
+      },
+
+      OPEN_D_MINOR: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'A'
+          },
+          3 => {
+            NOTE: 'F'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'D'
           }
         }
       },
@@ -195,28 +197,94 @@ module Fretboard
       OPEN_G: {
         STRINGS: {
           1 => {
-            NOTE: 'D',
-            SPN: 'D4'
+            NOTE: 'D'
           },
           2 => {
-            NOTE: 'B',
-            SPN: 'B3'
+            NOTE: 'B'
           },
           3 => {
-            NOTE: 'G',
-            SPN: 'G3'
+            NOTE: 'G'
           },
           4 => {
-            NOTE: 'D',
-            SPN: 'D3'
+            NOTE: 'D'
           },
           5 => {
-            NOTE: 'G',
-            SPN: 'G2'
+            NOTE: 'G'
           },
           6 => {
-            NOTE: 'D',
-            SPN: 'D2'
+            NOTE: 'D'
+          }
+        }
+      },
+
+      OPEN_G_MINOR: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: [
+              'A#',
+              'Bb'
+            ]
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'G'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
+      },
+
+      MODAL_D: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'A'
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
+      },
+
+      MODAL_G: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'C'
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'G'
+          },
+          6 => {
+            NOTE: 'D'
           }
         }
       }

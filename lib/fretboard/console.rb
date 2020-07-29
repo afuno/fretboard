@@ -3,9 +3,9 @@ require 'terminal-table'
 
 module Fretboard
   class Console
-    # def self.log(text)
-    #   new(text, nil).print
-    # end
+    def self.log(text)
+      new(text, nil).print
+    end
 
     # def self.success(text)
     #   new(text, :green).print
