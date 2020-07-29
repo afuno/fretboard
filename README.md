@@ -62,3 +62,4 @@ fretboard.draw
 - Open C (`open_c`)
 - Open D (`open_d`)
 - Open G (`open_g`)
+- Modal D (`modal_d`)
