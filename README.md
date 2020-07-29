@@ -53,6 +53,12 @@ fretboard.draw
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
+### Using from the console
+
+```
+bundle exec fretboard --draw-tuning standart
+```
+
 ### Available tunings:
 
 - Standart (`standart`)
