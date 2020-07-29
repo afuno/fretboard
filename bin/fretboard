@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+unless File.exist?('./Gemfile')
+  abort 'Please run fretboard from the root of the project'
+end
+
+require 'rubygems'
+
+begin
+  require 'bundler'
+  Bundler.setup
+rescue StandardError
+end
+
+$LOAD_PATH << "#{__dir__}/../lib"
+
+require 'fretboard/parser'
+
+Fretboard::Parser.parse(ARGV)

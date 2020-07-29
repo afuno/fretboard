@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z *.md *.gemspec bin lib`.split("\x0")
   spec.require_paths = ['lib']
 
-  # spec.executables   = ['fretboard']
+  spec.executables   = ['fretboard']
 
   spec.add_dependency 'colorize', '~> 0.8.1'
   spec.add_dependency 'terminal-table', '~> 1.8.0'
