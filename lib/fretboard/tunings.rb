@@ -214,6 +214,32 @@ module Fretboard
         }
       },
 
+      OPEN_G_MINOR: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: [
+              'A#',
+              'Bb'
+            ]
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'G'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
+      },
+
       MODAL_D: {
         STRINGS: {
           1 => {

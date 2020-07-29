@@ -12,6 +12,7 @@ module Fretboard
     # fretboard = Fretboard::Builder.open_d
     # fretboard = Fretboard::Builder.open_d_minor
     # fretboard = Fretboard::Builder.open_g
+    # fretboard = Fretboard::Builder.open_g_minor
     # fretboard = Fretboard::Builder.modal_d
     # fretboard = Fretboard::Builder.modal_g
 
@@ -31,6 +32,7 @@ module Fretboard
     #   open_d
     #   open_d_minor
     #   open_g
+    #   open_g_minor
     #   modal_d
     #   modal_g
     # ].freeze
@@ -77,6 +79,10 @@ module Fretboard
 
     def self.open_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_g, number_of_frets)
+    end
+
+    def self.open_g_minor(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_g_minor, number_of_frets)
     end
 
     def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
