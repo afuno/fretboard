@@ -212,6 +212,29 @@ module Fretboard
             NOTE: 'D'
           }
         }
+      },
+
+      MODAL_G: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'C'
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'G'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
       }
     }.freeze
 
