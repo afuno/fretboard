@@ -96,6 +96,29 @@ module Fretboard
         }
       },
 
+      OPEN_A: {
+        STRINGS: {
+          1 => {
+            NOTE: 'E'
+          },
+          2 => {
+            NOTE: 'A'
+          },
+          3 => {
+            NOTE: 'E'
+          },
+          4 => {
+            NOTE: 'C#'
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'E'
+          }
+        }
+      },
+
       OPEN_C: {
         STRINGS: {
           1 => {
