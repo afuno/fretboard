@@ -108,7 +108,10 @@ module Fretboard
             NOTE: 'E'
           },
           4 => {
-            NOTE: 'C#'
+            NOTE: [
+              'C#',
+              'Db'
+            ]
           },
           5 => {
             NOTE: 'A'
