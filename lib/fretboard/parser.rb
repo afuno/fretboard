@@ -1,6 +1,10 @@
+require 'active_support/core_ext'
 require 'optparse'
 
+require 'fretboard/builder'
 require 'fretboard/console'
+require 'fretboard/note'
+require 'fretboard/tunings'
 
 module Fretboard
   class Parser
@@ -34,6 +38,12 @@ module Fretboard
         opts.on('-h', '--help', 'Prints this help') do
           Fretboard::Console.log(opts.to_s)
           exit
+        end
+
+        opts.on('--draw-tuning CODE', 'Build a guitar tuning') do |code|
+          fretboard = Fretboard::Builder.new(code.to_sym)
+          fretboard.build
+          fretboard.draw
         end
       end
     end

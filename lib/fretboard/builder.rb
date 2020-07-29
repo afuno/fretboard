@@ -1,3 +1,5 @@
+# require 'active_support/core_ext/hash'
+
 require 'fretboard/console'
 
 module Fretboard
