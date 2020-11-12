@@ -19,6 +19,7 @@ module Fretboard
     # fretboard = Fretboard::Builder.drop_b_flat
     # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.drop_c
+    # fretboard = Fretboard::Builder.tuning_d
     # fretboard = Fretboard::Builder.open_d
     # fretboard = Fretboard::Builder.open_d_minor
     # fretboard = Fretboard::Builder.drop_d
@@ -50,6 +51,7 @@ module Fretboard
     #   drop_b_flat
     #   open_c
     #   drop_c
+    #   tuning_d
     #   open_d
     #   open_d_minor
     #   drop_d
@@ -117,6 +119,10 @@ module Fretboard
 
     def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:drop_c, number_of_frets)
+    end
+
+    def self.tuning_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_d, number_of_frets)
     end
 
     def self.open_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)

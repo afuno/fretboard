@@ -73,6 +73,7 @@ bundle exec fretboard --draw-tuning standart
 - Drop Bb (`drop_b_flat`)
 - Open C (`open_c`)
 - Drop C (`drop_c`)
+- D Tuning (`tuning_d`)
 - Open D (`open_d`)
 - Open D Minor (`open_d_minor`)
 - Drop D (`drop_d`)
