@@ -29,6 +29,29 @@ module Fretboard
         }
       },
 
+      TUNING_A: {
+        STRINGS: {
+          1 => {
+            NOTE: 'A'
+          },
+          2 => {
+            NOTE: 'E'
+          },
+          3 => {
+            NOTE: 'C'
+          },
+          4 => {
+            NOTE: 'G'
+          },
+          5 => {
+            NOTE: 'D'
+          },
+          6 => {
+            NOTE: 'A'
+          }
+        }
+      },
+
       OPEN_A: {
         STRINGS: {
           1 => {

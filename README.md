@@ -62,6 +62,7 @@ bundle exec fretboard --draw-tuning standart
 ### Available tunings:
 
 - Standart (`standart`)
+- A Tuning (`tuning_a`)
 - Open A (`open_a`)
 - Drop A (`drop_a`)
 - Drop A# (`drop_a_sharp`)

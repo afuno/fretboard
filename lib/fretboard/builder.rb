@@ -8,6 +8,7 @@ module Fretboard
   class Builder
     # fretboard = Fretboard::Builder.new(:standart)
     # fretboard = Fretboard::Builder.standart
+    # fretboard = Fretboard::Builder.tuning_a
     # fretboard = Fretboard::Builder.open_a
     # fretboard = Fretboard::Builder.drop_a
     # fretboard = Fretboard::Builder.drop_a_sharp
@@ -38,6 +39,7 @@ module Fretboard
 
     # METHODS_NAMES = %i[
     #   standart
+    #   tuning_a
     #   open_a
     #   drop_a
     #   drop_a_sharp
@@ -71,6 +73,10 @@ module Fretboard
 
     def self.standart(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:standart, number_of_frets)
+    end
+
+    def self.tuning_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_a, number_of_frets)
     end
 
     def self.open_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
