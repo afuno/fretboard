@@ -72,6 +72,7 @@ bundle exec fretboard --draw-tuning standart
 - Double Drop D (`double_drop_d`)
 - Modal D (`modal_d`)
 - Open D (`open_e`)
+- Open D (`open_f`)
 - Open G (`open_g`)
 - Open G Minor (`open_g_minor`)
 - Modal G (`modal_g`)
