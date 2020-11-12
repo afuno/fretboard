@@ -62,7 +62,11 @@ bundle exec fretboard --draw-tuning standart
 ### Available tunings:
 
 <details>
-  <summary>Standart (`standart`)</summary>
+  <summary>Standart (standart)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning standart
+  ```
 
   ```
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +83,11 @@ bundle exec fretboard --draw-tuning standart
 </details>
 
 <details>
-  <summary>A Tuning (`tuning_a`)</summary>
+  <summary>A Tuning (tuning_a)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning tuning_a
+  ```
 
   ```
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
