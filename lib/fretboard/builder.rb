@@ -10,6 +10,7 @@ module Fretboard
     # fretboard = Fretboard::Builder.standart
     # fretboard = Fretboard::Builder.open_a
     # fretboard = Fretboard::Builder.open_b
+    # fretboard = Fretboard::Builder.drop_b
     # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.drop_c
     # fretboard = Fretboard::Builder.open_d
@@ -33,6 +34,7 @@ module Fretboard
     #   standart
     #   open_a
     #   open_b
+    #   drop_b
     #   open_c
     #   drop_c
     #   open_d
@@ -65,6 +67,10 @@ module Fretboard
 
     def self.open_b(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_b, number_of_frets)
+    end
+
+    def self.drop_b(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_b, number_of_frets)
     end
 
     def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)

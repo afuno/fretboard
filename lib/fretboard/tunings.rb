@@ -87,6 +87,38 @@ module Fretboard
         }
       },
 
+      DROP_B: {
+        STRINGS: {
+          1 => {
+            NOTE: [
+              'C#',
+              'Db'
+            ]
+          },
+          2 => {
+            NOTE: [
+              'G#',
+              'Ab'
+            ]
+          },
+          3 => {
+            NOTE: 'E'
+          },
+          4 => {
+            NOTE: 'B'
+          },
+          5 => {
+            NOTE: [
+              'F#',
+              'Gb'
+            ]
+          },
+          6 => {
+            NOTE: 'B'
+          }
+        }
+      },
+
       OPEN_C: {
         STRINGS: {
           1 => {
