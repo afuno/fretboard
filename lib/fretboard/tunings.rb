@@ -538,6 +538,38 @@ module Fretboard
         }
       },
 
+      TUNING_F: {
+        STRINGS: {
+          1 => {
+            NOTE: 'F'
+          },
+          2 => {
+            NOTE: 'C'
+          },
+          3 => {
+            NOTE: [
+              'G#',
+              'Ab'
+            ]
+          },
+          4 => {
+            NOTE: [
+              'D#',
+              'Eb'
+            ]
+          },
+          5 => {
+            NOTE: [
+              'A#',
+              'Bb'
+            ]
+          },
+          6 => {
+            NOTE: 'F'
+          }
+        }
+      },
+
       TUNING_G: {
         STRINGS: {
           1 => {
