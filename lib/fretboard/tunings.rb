@@ -251,6 +251,32 @@ module Fretboard
         }
       },
 
+      OPEN_E: {
+        STRINGS: {
+          1 => {
+            NOTE: 'E'
+          },
+          2 => {
+            NOTE: 'B'
+          },
+          3 => {
+            NOTE: [
+              'G#',
+              'Ab'
+            ]
+          },
+          4 => {
+            NOTE: 'E'
+          },
+          5 => {
+            NOTE: 'B'
+          },
+          6 => {
+            NOTE: 'E'
+          }
+        }
+      },
+
       OPEN_G: {
         STRINGS: {
           1 => {
