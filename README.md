@@ -59,7 +59,7 @@ fretboard.draw
 bundle exec fretboard --draw-tuning standart
 ```
 
-### Available tunings:
+## Available tunings:
 
 <details>
   <summary>Standart (standart)</summary>
