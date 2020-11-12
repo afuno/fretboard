@@ -62,7 +62,22 @@ bundle exec fretboard --draw-tuning standart
 ### Available tunings:
 
 - Standart (`standart`)
-- A Tuning (`tuning_a`)
+- <details>
+    <summary>A Tuning (`tuning_a`)</summary>
+
+    ```
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    | № | 0 | 1     | 2     | 3     | 4     | 5 | 6     | 7 | 8     | 9     | 10    | 11    | 12 |
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    | 1 | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  |
+    | 2 | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb | E  |
+    | 3 | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C  |
+    | 4 | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  |
+    | 5 | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D  |
+    | 6 | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  |
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
+  </details>
 - Open A (`open_a`)
 - Drop A (`drop_a`)
 - Drop A# (`drop_a_sharp`)
