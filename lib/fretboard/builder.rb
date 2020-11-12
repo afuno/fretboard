@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'active_support/core_ext/hash'
 
 require 'fretboard/console'
@@ -6,16 +8,31 @@ module Fretboard
   class Builder
     # fretboard = Fretboard::Builder.new(:standart)
     # fretboard = Fretboard::Builder.standart
-    # fretboard = Fretboard::Builder.drop_c
-    # fretboard = Fretboard::Builder.drop_d
-    # fretboard = Fretboard::Builder.double_drop_d
+    # fretboard = Fretboard::Builder.tuning_a
     # fretboard = Fretboard::Builder.open_a
+    # fretboard = Fretboard::Builder.drop_a
+    # fretboard = Fretboard::Builder.drop_a_sharp
+    # fretboard = Fretboard::Builder.drop_a_flat
+    # fretboard = Fretboard::Builder.tuning_b
+    # fretboard = Fretboard::Builder.open_b
+    # fretboard = Fretboard::Builder.drop_b
+    # fretboard = Fretboard::Builder.drop_b_flat
+    # fretboard = Fretboard::Builder.tuning_c
     # fretboard = Fretboard::Builder.open_c
+    # fretboard = Fretboard::Builder.drop_c
+    # fretboard = Fretboard::Builder.tuning_d
     # fretboard = Fretboard::Builder.open_d
     # fretboard = Fretboard::Builder.open_d_minor
+    # fretboard = Fretboard::Builder.drop_d
+    # fretboard = Fretboard::Builder.double_drop_d
+    # fretboard = Fretboard::Builder.modal_d
+    # fretboard = Fretboard::Builder.open_e
+    # fretboard = Fretboard::Builder.tuning_f
+    # fretboard = Fretboard::Builder.open_f
+    # fretboard = Fretboard::Builder.tuning_g
     # fretboard = Fretboard::Builder.open_g
     # fretboard = Fretboard::Builder.open_g_minor
-    # fretboard = Fretboard::Builder.modal_d
+    # fretboard = Fretboard::Builder.drop_g_sharp
     # fretboard = Fretboard::Builder.modal_g
 
     # fretboard.build
@@ -26,16 +43,31 @@ module Fretboard
 
     # METHODS_NAMES = %i[
     #   standart
-    #   drop_c
-    #   drop_d
-    #   double_drop_d
+    #   tuning_a
     #   open_a
+    #   drop_a
+    #   drop_a_sharp
+    #   drop_a_flat
+    #   tuning_b
+    #   open_b
+    #   drop_b
+    #   drop_b_flat
+    #   tuning_c
     #   open_c
+    #   drop_c
+    #   tuning_d
     #   open_d
     #   open_d_minor
+    #   drop_d
+    #   double_drop_d
+    #   modal_d
+    #   open_e
+    #   tuning_f
+    #   open_f
+    #   tuning_g
     #   open_g
     #   open_g_minor
-    #   modal_d
+    #   drop_g_sharp
     #   modal_g
     # ].freeze
 
@@ -51,24 +83,56 @@ module Fretboard
       new(:standart, number_of_frets)
     end
 
-    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:drop_c, number_of_frets)
-    end
-
-    def self.drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:drop_d, number_of_frets)
-    end
-
-    def self.double_drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:double_drop_d, number_of_frets)
+    def self.tuning_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_a, number_of_frets)
     end
 
     def self.open_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_a, number_of_frets)
     end
 
+    def self.drop_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_a, number_of_frets)
+    end
+
+    def self.drop_a_sharp(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_a_sharp, number_of_frets)
+    end
+
+    def self.drop_a_flat(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_a_flat, number_of_frets)
+    end
+
+    def self.tuning_b(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_b, number_of_frets)
+    end
+
+    def self.open_b(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_b, number_of_frets)
+    end
+
+    def self.drop_b(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_b, number_of_frets)
+    end
+
+    def self.drop_b_flat(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_b_flat, number_of_frets)
+    end
+
+    def self.tuning_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_c, number_of_frets)
+    end
+
     def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_c, number_of_frets)
+    end
+
+    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_c, number_of_frets)
+    end
+
+    def self.tuning_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_d, number_of_frets)
     end
 
     def self.open_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
@@ -79,6 +143,34 @@ module Fretboard
       new(:open_d_minor, number_of_frets)
     end
 
+    def self.drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_d, number_of_frets)
+    end
+
+    def self.double_drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:double_drop_d, number_of_frets)
+    end
+
+    def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:modal_d, number_of_frets)
+    end
+
+    def self.open_e(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_e, number_of_frets)
+    end
+
+    def self.tuning_f(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_f, number_of_frets)
+    end
+
+    def self.open_f(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_f, number_of_frets)
+    end
+
+    def self.tuning_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:tuning_g, number_of_frets)
+    end
+
     def self.open_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_g, number_of_frets)
     end
@@ -87,8 +179,8 @@ module Fretboard
       new(:open_g_minor, number_of_frets)
     end
 
-    def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:modal_d, number_of_frets)
+    def self.drop_g_sharp(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_g_sharp, number_of_frets)
     end
 
     def self.modal_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
@@ -163,9 +255,10 @@ module Fretboard
         open_note = string_notes[0]
 
         if open_note.is_a?(Array)
-          open_note = if sharp_or_flat == :both
+          open_note = case sharp_or_flat
+                      when :both
                         open_note.join('/')
-                      elsif sharp_or_flat == :sharp
+                      when :sharp
                         open_note.first
                       else
                         open_note.last

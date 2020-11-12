@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fretboard
   MAJOR = 1
   MINOR = 3

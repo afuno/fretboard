@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
@@ -21,5 +23,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'colorize', '~> 0.8.1'
   spec.add_dependency 'terminal-table', '~> 1.8.0'
-  spec.add_development_dependency 'rubocop', '= 0.88'
+  spec.add_development_dependency 'rubocop', '~> 1.3.0'
 end
