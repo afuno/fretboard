@@ -535,6 +535,44 @@ module Fretboard
         }
       },
 
+      DROP_G_SHARP: {
+        STRINGS: {
+          1 => {
+            NOTE: [
+              'A#',
+              'Bb'
+            ]
+          },
+          2 => {
+            NOTE: 'F'
+          },
+          3 => {
+            NOTE: [
+              'C#',
+              'Db'
+            ]
+          },
+          4 => {
+            NOTE: [
+              'G#',
+              'Ab'
+            ]
+          },
+          5 => {
+            NOTE: [
+              'D#',
+              'Eb'
+            ]
+          },
+          6 => {
+            NOTE: [
+              'G#',
+              'Ab'
+            ]
+          }
+        }
+      },
+
       MODAL_G: {
         STRINGS: {
           1 => {
