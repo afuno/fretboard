@@ -10,13 +10,13 @@ module Fretboard
     # fretboard = Fretboard::Builder.standart
     # fretboard = Fretboard::Builder.open_a
     # fretboard = Fretboard::Builder.open_b
+    # fretboard = Fretboard::Builder.open_c
+    # fretboard = Fretboard::Builder.drop_c
     # fretboard = Fretboard::Builder.open_d
     # fretboard = Fretboard::Builder.open_d_minor
     # fretboard = Fretboard::Builder.drop_d
     # fretboard = Fretboard::Builder.double_drop_d
     # fretboard = Fretboard::Builder.modal_d
-    # fretboard = Fretboard::Builder.drop_c
-    # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.open_g
     # fretboard = Fretboard::Builder.open_g_minor
     # fretboard = Fretboard::Builder.modal_g
@@ -31,13 +31,13 @@ module Fretboard
     #   standart
     #   open_a
     #   open_b
+    #   open_c
+    #   drop_c
     #   open_d
     #   open_d_minor
     #   drop_d
     #   double_drop_d
     #   modal_d
-    #   drop_c
-    #   open_c
     #   open_g
     #   open_g_minor
     #   modal_g
@@ -63,6 +63,14 @@ module Fretboard
       new(:open_b, number_of_frets)
     end
 
+    def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_c, number_of_frets)
+    end
+
+    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_c, number_of_frets)
+    end
+
     def self.open_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_d, number_of_frets)
     end
@@ -81,14 +89,6 @@ module Fretboard
 
     def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:modal_d, number_of_frets)
-    end
-
-    def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:open_c, number_of_frets)
-    end
-
-    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:drop_c, number_of_frets)
     end
 
     def self.open_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
