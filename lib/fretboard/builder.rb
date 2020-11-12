@@ -53,24 +53,8 @@ module Fretboard
       new(:standart, number_of_frets)
     end
 
-    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:drop_c, number_of_frets)
-    end
-
-    def self.drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:drop_d, number_of_frets)
-    end
-
-    def self.double_drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:double_drop_d, number_of_frets)
-    end
-
     def self.open_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_a, number_of_frets)
-    end
-
-    def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:open_c, number_of_frets)
     end
 
     def self.open_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
@@ -81,16 +65,32 @@ module Fretboard
       new(:open_d_minor, number_of_frets)
     end
 
+    def self.drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_d, number_of_frets)
+    end
+
+    def self.double_drop_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:double_drop_d, number_of_frets)
+    end
+
+    def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:modal_d, number_of_frets)
+    end
+
+    def self.open_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:open_c, number_of_frets)
+    end
+
+    def self.drop_c(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:drop_c, number_of_frets)
+    end
+
     def self.open_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_g, number_of_frets)
     end
 
     def self.open_g_minor(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
       new(:open_g_minor, number_of_frets)
-    end
-
-    def self.modal_d(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:modal_d, number_of_frets)
     end
 
     def self.modal_g(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
