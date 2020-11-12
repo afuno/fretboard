@@ -113,6 +113,32 @@ module Fretboard
         }
       },
 
+      TUNING_B: {
+        STRINGS: {
+          1 => {
+            NOTE: 'B'
+          },
+          2 => {
+            NOTE: [
+              'F#',
+              'Gb'
+            ]
+          },
+          3 => {
+            NOTE: 'D'
+          },
+          4 => {
+            NOTE: 'A'
+          },
+          5 => {
+            NOTE: 'E'
+          },
+          6 => {
+            NOTE: 'B'
+          }
+        }
+      },
+
       OPEN_B: {
         STRINGS: {
           1 => {
