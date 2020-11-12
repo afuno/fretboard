@@ -55,6 +55,32 @@ module Fretboard
         }
       },
 
+      DROP_A: {
+        STRINGS: {
+          1 => {
+            NOTE: 'B'
+          },
+          2 => {
+            NOTE: [
+              'F#',
+              'Gb'
+            ]
+          },
+          3 => {
+            NOTE: 'D'
+          },
+          4 => {
+            NOTE: 'A'
+          },
+          5 => {
+            NOTE: 'E'
+          },
+          6 => {
+            NOTE: 'A'
+          }
+        }
+      },
+
       DROP_A_SHARP: {
         STRINGS: {
           1 => {
