@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fretboard/builder'
 # require 'fretboard/constants'
 require 'fretboard/note'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fretboard
   class Notes
     # Fretboard::Notes.all(:both)
@@ -39,9 +41,10 @@ module Fretboard
         result = value
 
         if value.is_a?(Array)
-          result = if sharp_or_flat == :both
+          result = case sharp_or_flat
+                   when :both
                      value.join('/')
-                   elsif sharp_or_flat == :sharp
+                   when :sharp
                      value.first
                    else
                      value.last

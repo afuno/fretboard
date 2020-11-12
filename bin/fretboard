@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 unless File.exist?('./Gemfile')
   abort 'Please run fretboard from the root of the project'

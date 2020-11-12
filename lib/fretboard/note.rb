@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fretboard/notes'
 
 module Fretboard
@@ -12,9 +14,10 @@ module Fretboard
       )
 
       if note.is_a?(Array)
-        note = if sharp_or_flat == :both
+        note = case sharp_or_flat
+               when :both
                  note.join('/')
-               elsif sharp_or_flat == :sharp
+               when :sharp
                  note.first
                else
                  note.last

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'active_support/core_ext/hash'
 
 require 'fretboard/console'
@@ -163,9 +165,10 @@ module Fretboard
         open_note = string_notes[0]
 
         if open_note.is_a?(Array)
-          open_note = if sharp_or_flat == :both
+          open_note = case sharp_or_flat
+                      when :both
                         open_note.join('/')
-                      elsif sharp_or_flat == :sharp
+                      when :sharp
                         open_note.first
                       else
                         open_note.last
