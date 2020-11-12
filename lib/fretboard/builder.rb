@@ -8,16 +8,16 @@ module Fretboard
   class Builder
     # fretboard = Fretboard::Builder.new(:standart)
     # fretboard = Fretboard::Builder.standart
-    # fretboard = Fretboard::Builder.drop_c
-    # fretboard = Fretboard::Builder.drop_d
-    # fretboard = Fretboard::Builder.double_drop_d
     # fretboard = Fretboard::Builder.open_a
-    # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.open_d
     # fretboard = Fretboard::Builder.open_d_minor
+    # fretboard = Fretboard::Builder.drop_d
+    # fretboard = Fretboard::Builder.double_drop_d
+    # fretboard = Fretboard::Builder.modal_d
+    # fretboard = Fretboard::Builder.drop_c
+    # fretboard = Fretboard::Builder.open_c
     # fretboard = Fretboard::Builder.open_g
     # fretboard = Fretboard::Builder.open_g_minor
-    # fretboard = Fretboard::Builder.modal_d
     # fretboard = Fretboard::Builder.modal_g
 
     # fretboard.build
