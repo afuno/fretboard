@@ -296,6 +296,35 @@ module Fretboard
         }
       },
 
+      TUNING_C: {
+        STRINGS: {
+          1 => {
+            NOTE: 'C'
+          },
+          2 => {
+            NOTE: 'G'
+          },
+          3 => {
+            NOTE: [
+              'D#',
+              'Eb'
+            ]
+          },
+          4 => {
+            NOTE: [
+              'A#',
+              'Bb'
+            ]
+          },
+          5 => {
+            NOTE: 'F'
+          },
+          6 => {
+            NOTE: 'C'
+          }
+        }
+      },
+
       OPEN_C: {
         STRINGS: {
           1 => {
