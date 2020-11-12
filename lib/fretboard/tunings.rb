@@ -29,75 +29,6 @@ module Fretboard
         }
       },
 
-      DROP_C: {
-        STRINGS: {
-          1 => {
-            NOTE: 'D'
-          },
-          2 => {
-            NOTE: 'A'
-          },
-          3 => {
-            NOTE: 'F'
-          },
-          4 => {
-            NOTE: 'C'
-          },
-          5 => {
-            NOTE: 'G'
-          },
-          6 => {
-            NOTE: 'C'
-          }
-        }
-      },
-
-      DROP_D: {
-        STRINGS: {
-          1 => {
-            NOTE: 'E'
-          },
-          2 => {
-            NOTE: 'B'
-          },
-          3 => {
-            NOTE: 'G'
-          },
-          4 => {
-            NOTE: 'D'
-          },
-          5 => {
-            NOTE: 'A'
-          },
-          6 => {
-            NOTE: 'D'
-          }
-        }
-      },
-
-      DOUBLE_DROP_D: {
-        STRINGS: {
-          1 => {
-            NOTE: 'D'
-          },
-          2 => {
-            NOTE: 'B'
-          },
-          3 => {
-            NOTE: 'G'
-          },
-          4 => {
-            NOTE: 'D'
-          },
-          5 => {
-            NOTE: 'A'
-          },
-          6 => {
-            NOTE: 'D'
-          }
-        }
-      },
-
       OPEN_A: {
         STRINGS: {
           1 => {
@@ -134,6 +65,29 @@ module Fretboard
           },
           3 => {
             NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'C'
+          },
+          5 => {
+            NOTE: 'G'
+          },
+          6 => {
+            NOTE: 'C'
+          }
+        }
+      },
+
+      DROP_C: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'A'
+          },
+          3 => {
+            NOTE: 'F'
           },
           4 => {
             NOTE: 'C'
@@ -196,6 +150,75 @@ module Fretboard
         }
       },
 
+      DROP_D: {
+        STRINGS: {
+          1 => {
+            NOTE: 'E'
+          },
+          2 => {
+            NOTE: 'B'
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
+      },
+
+      DOUBLE_DROP_D: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'B'
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
+      },
+
+      MODAL_D: {
+        STRINGS: {
+          1 => {
+            NOTE: 'D'
+          },
+          2 => {
+            NOTE: 'A'
+          },
+          3 => {
+            NOTE: 'G'
+          },
+          4 => {
+            NOTE: 'D'
+          },
+          5 => {
+            NOTE: 'A'
+          },
+          6 => {
+            NOTE: 'D'
+          }
+        }
+      },
+
       OPEN_G: {
         STRINGS: {
           1 => {
@@ -238,29 +261,6 @@ module Fretboard
           },
           5 => {
             NOTE: 'G'
-          },
-          6 => {
-            NOTE: 'D'
-          }
-        }
-      },
-
-      MODAL_D: {
-        STRINGS: {
-          1 => {
-            NOTE: 'D'
-          },
-          2 => {
-            NOTE: 'A'
-          },
-          3 => {
-            NOTE: 'G'
-          },
-          4 => {
-            NOTE: 'D'
-          },
-          5 => {
-            NOTE: 'A'
           },
           6 => {
             NOTE: 'D'
