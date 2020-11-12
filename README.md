@@ -103,12 +103,132 @@ bundle exec fretboard --draw-tuning standart
   ```
 </details>
 
-- Open A (`open_a`)
-- Drop A (`drop_a`)
-- Drop A# (`drop_a_sharp`)
-- Drop Ab (`drop_a_flat`)
-- B Tuning (`tuning_b`)
-- Open B (`open_b`)
+<details>
+  <summary>Open A (open_a)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning open_a
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1     | 2     | 3 | 4     | 5     | 6     | 7     | 8 | 9     | 10 | 11    | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | E     | F     | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D  | D#/Eb | E     |
+  | 2 | A     | A#/Bb | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G  | G#/Ab | A     |
+  | 3 | E     | F     | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D  | D#/Eb | E     |
+  | 4 | C#/Db | D     | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B  | C     | C#/Db |
+  | 5 | A     | A#/Bb | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G  | G#/Ab | A     |
+  | 6 | E     | F     | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D  | D#/Eb | E     |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+<details>
+  <summary>Drop A (drop_a)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning drop_a
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1     | 2     | 3 | 4     | 5 | 6     | 7     | 8     | 9     | 10 | 11    | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  | A#/Bb | B     |
+  | 2 | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb | E  | F     | F#/Gb |
+  | 3 | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C  | C#/Db | D     |
+  | 4 | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  | G#/Ab | A     |
+  | 5 | E     | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D  | D#/Eb | E     |
+  | 6 | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  | G#/Ab | A     |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+<details>
+  <summary>Drop A# (drop_a_sharp)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning drop_a_sharp
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1     | 2 | 3     | 4 | 5     | 6     | 7     | 8     | 9 | 10    | 11    | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B     | C     |
+  | 2 | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb | E | F     | F#/Gb | G     |
+  | 3 | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D     | D#/Eb |
+  | 4 | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A     | A#/Bb |
+  | 5 | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E     | F     |
+  | 6 | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A     | A#/Bb |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+<details>
+  <summary>Drop Ab (drop_a_flat)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning drop_a_flat
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1     | 2     | 3     | 4 | 5     | 6 | 7     | 8     | 9     | 10    | 11 | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  | A#/Bb |
+  | 2 | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb | E  | F     |
+  | 3 | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C  | C#/Db |
+  | 4 | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  | G#/Ab |
+  | 5 | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D  | D#/Eb |
+  | 6 | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  | G#/Ab |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+<details>
+  <summary>B Tuning (tuning_b)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning tuning_b
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1     | 2     | 3 | 4     | 5 | 6     | 7     | 8     | 9     | 10 | 11    | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  | A#/Bb | B     |
+  | 2 | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb | E  | F     | F#/Gb |
+  | 3 | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C  | C#/Db | D     |
+  | 4 | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  | G#/Ab | A     |
+  | 5 | E     | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D  | D#/Eb | E     |
+  | 6 | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  | A#/Bb | B     |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+<details>
+  <summary>Open B (open_b)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning open_b
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1 | 2     | 3     | 4     | 5     | 6 | 7     | 8 | 9     | 10    | 11    | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb |
+  | 2 | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     |
+  | 3 | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb |
+  | 4 | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     |
+  | 5 | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     | F#/Gb |
+  | 6 | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
 - Drop B (`drop_b`)
 - Drop Bb (`drop_b_flat`)
 - C Tuning (`tuning_c`)
