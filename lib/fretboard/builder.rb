@@ -220,7 +220,7 @@ module Fretboard
         (1..@number_of_frets).each do |fret|
           next_note = Fretboard::Note.next_for(
             current_note,
-            sharp_or_flat: sharp_or_flat
+            sharp_or_flat:
           )
 
           puts "Fret: #{fret} (#{next_note})"
