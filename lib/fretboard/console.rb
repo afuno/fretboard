@@ -4,7 +4,7 @@ require 'colorize'
 require 'terminal-table'
 
 module Fretboard
-  class Console
+  class Console # rubocop:disable Style/Documentation
     def self.log(text)
       new(text, nil).print
     end

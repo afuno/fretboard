@@ -11,6 +11,7 @@ begin
   require 'bundler'
   Bundler.setup
 rescue StandardError
+  # ...
 end
 
 $LOAD_PATH << "#{__dir__}/../lib"

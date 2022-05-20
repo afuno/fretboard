@@ -5,7 +5,7 @@
 require 'fretboard/console'
 
 module Fretboard
-  class Builder
+  class Builder # rubocop:disable Style/Documentation, Metrics/ClassLength
     # fretboard = Fretboard::Builder.new(:standart)
     # fretboard = Fretboard::Builder.standart
     # fretboard = Fretboard::Builder.tuning_a
@@ -194,7 +194,7 @@ module Fretboard
       @data = {}
     end
 
-    def build(sharp_or_flat: :both)
+    def build(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       unless Fretboard::Tunings.exists?(@tuning)
         Fretboard::Console.danger('Unable to detect guitar tuning')
         return
@@ -235,7 +235,7 @@ module Fretboard
       puts 'done'
     end
 
-    def draw(sharp_or_flat: :both)
+    def draw(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       unless @data.any?
         Fretboard::Console.danger('Create the data')
         return

@@ -9,7 +9,7 @@ require 'fretboard/note'
 require 'fretboard/tunings'
 
 module Fretboard
-  class Parser
+  class Parser # rubocop:disable Style/Documentation
     attr_reader :args
 
     def self.parse(args)
@@ -28,7 +28,7 @@ module Fretboard
 
     private
 
-    def parser
+    def parser # rubocop:disable Metrics/MethodLength
       OptionParser.new do |opts|
         opts.banner = 'Usage: fretboard [options]'
 

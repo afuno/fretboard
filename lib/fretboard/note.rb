@@ -3,15 +3,13 @@
 require 'fretboard/notes'
 
 module Fretboard
-  class Note
+  class Note # rubocop:disable Style/Documentation
     # Fretboard::Note.next_for('C')
     # Fretboard::Note.next_for(['F#', 'Gb'])
     # Fretboard::Note.next_for('F#/Gb')
 
-    def self.next_for(note, sharp_or_flat: :both)
-      all_notes = Fretboard::Notes.all(
-        sharp_or_flat
-      )
+    def self.next_for(note, sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength
+      all_notes = Fretboard::Notes.all(sharp_or_flat)
 
       if note.is_a?(Array)
         note = case sharp_or_flat
