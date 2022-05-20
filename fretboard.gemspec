@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
   spec.executables   = ['fretboard']
 
   spec.add_dependency 'colorize', '~> 0.8.1'
-  spec.add_dependency 'terminal-table', '~> 1.8.0'
-  spec.add_development_dependency 'rubocop', '~> 1.3.0'
+  spec.add_dependency 'terminal-table', '~> 3.0.1'
+  spec.add_development_dependency 'rubocop', '~> 1.29.1'
 end
