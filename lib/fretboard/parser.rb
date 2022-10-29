@@ -42,10 +42,14 @@ module Fretboard
           exit
         end
 
-        opts.on('--draw-tuning CODE', 'Build a guitar tuning') do |code|
+        opts.on('-d', '--draw-tuning CODE', 'Build a guitar tuning') do |code|
           fretboard = Fretboard::Builder.new(code.to_sym)
           fretboard.build
           fretboard.draw
+        end
+
+        opts.on('-l', '--tunings-list', 'List of supported guitar tunings') do
+          Fretboard::Tunings.draw_list
         end
       end
     end

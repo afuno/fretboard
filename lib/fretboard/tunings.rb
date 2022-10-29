@@ -304,6 +304,40 @@ module Fretboard
       }
     }.freeze
 
+    private_constant :TUNINGS
+
+    def self.list
+      TUNINGS
+    end
+
+    def self.draw_list # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+      headings = []
+      rows = []
+
+      headings << 'Tuning'
+      headings << 'Notes'
+
+      list.each do |tuning_code, tuning_data|
+        row = []
+
+        row << tuning_code
+
+        prepared_string_notes = tuning_data[:STRINGS].map do |_string_number, string_notes|
+          note = string_notes[:NOTE]
+
+          note.is_a?(Array) ? note.join('/') : note
+        end.join(', ')
+
+        row << prepared_string_notes
+
+        rows << row
+      end
+
+      Fretboard::Console.print_table(headings.uniq, rows)
+
+      nil
+    end
+
     def self.fetch(tuning_name)
       new(tuning_name).fetch
     end
