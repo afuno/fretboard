@@ -237,7 +237,7 @@ module Fretboard
 
     def draw(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       unless @data.any?
-        Fretboard::Console.danger('Create the data')
+        Fretboard::Console.danger('Build the guitar fretboard data for drawing')
         return
       end
 
