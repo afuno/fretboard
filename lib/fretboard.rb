@@ -6,6 +6,6 @@ require 'fretboard/note'
 require 'fretboard/notes'
 require 'fretboard/tunings'
 
-module Fretboard
+module Fretboard # rubocop:disable Style/Documentation
   # extend Constants
 end
