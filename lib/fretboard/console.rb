@@ -23,8 +23,8 @@ module Fretboard
 
     def self.print_table(headings, rows)
       table = Terminal::Table.new(
-        headings: headings,
-        rows: rows,
+        headings:,
+        rows:,
         style: { border_x: '~', border_i: '~' }
       )
 

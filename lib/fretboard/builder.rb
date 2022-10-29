@@ -6,8 +6,8 @@ require 'fretboard/console'
 
 module Fretboard
   class Builder # rubocop:disable Style/Documentation, Metrics/ClassLength
-    # fretboard = Fretboard::Builder.new(:standart)
-    # fretboard = Fretboard::Builder.standart
+    # fretboard = Fretboard::Builder.new(:standard)
+    # fretboard = Fretboard::Builder.standard
     # fretboard = Fretboard::Builder.tuning_a
     # fretboard = Fretboard::Builder.open_a
     # fretboard = Fretboard::Builder.drop_a
@@ -42,7 +42,7 @@ module Fretboard
     DEFAULT_NUMBER_OF_FRETS = 12
 
     # METHODS_NAMES = %i[
-    #   standart
+    #   standard
     #   tuning_a
     #   open_a
     #   drop_a
@@ -79,8 +79,8 @@ module Fretboard
     #   end
     # end
 
-    def self.standart(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:standart, number_of_frets)
+    def self.standard(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:standard, number_of_frets)
     end
 
     def self.tuning_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
@@ -200,30 +200,30 @@ module Fretboard
         return
       end
 
-      tuning = Fretboard::Tunings.get(@tuning)
+      tuning = Fretboard::Tunings.fetch(@tuning)
       strings = tuning[:STRINGS]
       number_of_strings = strings.size
 
       (1..number_of_strings).each do |string_number|
-        puts
-        puts "String: #{string_number}"
-        puts
+        # puts
+        # puts "String: #{string_number}"
+        # puts
 
         current_note = strings[string_number][:NOTE]
 
         @data[string_number] = {}
 
-        puts "Fret: 0 (#{current_note})"
+        # puts "Fret: 0 (#{current_note})"
 
         @data[string_number][0] = current_note
 
         (1..@number_of_frets).each do |fret|
           next_note = Fretboard::Note.next_for(
             current_note,
-            sharp_or_flat: sharp_or_flat
+            sharp_or_flat:
           )
 
-          puts "Fret: #{fret} (#{next_note})"
+          # puts "Fret: #{fret} (#{next_note})"
 
           @data[string_number][fret] = next_note
 
@@ -231,13 +231,13 @@ module Fretboard
         end
       end
 
-      puts
-      puts 'done'
+      # puts
+      # puts 'done'
     end
 
     def draw(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       unless @data.any?
-        Fretboard::Console.danger('Create the data')
+        Fretboard::Console.danger('Build the guitar fretboard data for drawing')
         return
       end
 

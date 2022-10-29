@@ -15,12 +15,12 @@ gem 'fretboard'
 ### Creates a fretboard with the specified tuning
 
 ```ruby
-fretboard = Fretboard::Builder.new(:standart)
+fretboard = Fretboard::Builder.new(:standard)
 # or
-fretboard = Fretboard::Builder.standart
+fretboard = Fretboard::Builder.standard
 ```
 
-[Available tunings](#available-tunings)
+[Supported guitar tunings](#supported-guitar-tunings)
 
 Creating the fretboard data:
 
@@ -55,17 +55,80 @@ fretboard.draw
 
 ### Using from the console
 
-```
-bundle exec fretboard --draw-tuning standart
-```
+#### Drawing the fretboard
 
-## Available tunings
+```
+bundle exec fretboard --draw-tuning standard
+```
 
 <details>
-  <summary>Standart (standart)</summary>
+  <summary>Result</summary>
 
   ```
-  bundle exec fretboard --draw-tuning standart
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0 | 1     | 2     | 3     | 4     | 5 | 6     | 7     | 8     | 9     | 10 | 11    | 12 |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D  | D#/Eb | E  |
+  | 2 | B | C     | C#/Db | D     | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  | A#/Bb | B  |
+  | 3 | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D     | D#/Eb | E     | F  | F#/Gb | G  |
+  | 4 | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C  | C#/Db | D  |
+  | 5 | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G  | G#/Ab | A  |
+  | 6 | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D  | D#/Eb | E  |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+#### Getting a list of supported guitar tunings.
+
+```
+bundle exec fretboard --draw-tuning standard
+```
+
+<details>
+  <summary>Result</summary>
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | Tuning        | Notes                                |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | STANDARD      | E, B, G, D, A, E                     |
+  | TUNING_A      | A, E, C, G, D, A                     |
+  | OPEN_A        | E, A, E, C#/Db, A, E                 |
+  | DROP_A        | B, F#/Gb, D, A, E, A                 |
+  | DROP_A_SHARP  | C, G, D#/Eb, A#/Bb, F, A#/Bb         |
+  | DROP_A_FLAT   | A#/Bb, F, C#/Db, G#/Ab, D#/Eb, G#/Ab |
+  | TUNING_B      | B, F#/Gb, D, A, E, B                 |
+  | OPEN_B        | D#/Eb, B, F#/Gb, B, F#/Gb, B         |
+  | DROP_B        | C#/Db, G#/Ab, E, B, F#/Gb, B         |
+  | DROP_B_FLAT   | C, G, D#/Eb, A#/Bb, F, A#/Bb         |
+  | TUNING_C      | C, G, D#/Eb, A#/Bb, F, C             |
+  | OPEN_C        | E, C, G, C, G, C                     |
+  | DROP_C        | D, A, F, C, G, C                     |
+  | TUNING_D      | D, A, F, C, G, D                     |
+  | OPEN_D        | D, A, F#/Gb, D, A, D                 |
+  | OPEN_D_MINOR  | D, A, F, D, A, D                     |
+  | DROP_D        | E, B, G, D, A, D                     |
+  | DOUBLE_DROP_D | D, B, G, D, A, D                     |
+  | MODAL_D       | D, A, G, D, A, D                     |
+  | OPEN_E        | E, B, G#/Ab, E, B, E                 |
+  | TUNING_F      | F, C, G#/Ab, D#/Eb, A#/Bb, F         |
+  | TUNING_G      | G, D, A#/Bb, F, C, G                 |
+  | OPEN_F        | F, C, F, C, A, F                     |
+  | OPEN_G        | D, B, G, D, G, D                     |
+  | OPEN_G_MINOR  | D, A#/Bb, G, D, G, D                 |
+  | DROP_G_SHARP  | A#/Bb, F, C#/Db, G#/Ab, D#/Eb, G#/Ab |
+  | MODAL_G       | D, C, G, D, G, D                     |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+## Supported guitar tunings
+
+<details>
+  <summary>Standard (standard)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning standard
   ```
 
   ```
