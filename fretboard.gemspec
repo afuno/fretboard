@@ -21,6 +21,8 @@ Gem::Specification.new do |spec|
 
   spec.executables   = ['fretboard']
 
+  spec.metadata['rubygems_mfa_required'] = 'true'
+
   spec.required_ruby_version = '>= 3.1.0'
 
   spec.add_dependency 'activesupport', '~> 7.0.3'
