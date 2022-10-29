@@ -2,11 +2,11 @@
 
 module Fretboard
   class Tunings # rubocop:disable Style/Documentation, Metrics/ClassLength
-    # Fretboard::Tunings.fetch(:standart)
-    # Fretboard::Tunings.exists?(:standart)
+    # Fretboard::Tunings.fetch(:standard)
+    # Fretboard::Tunings.exists?(:standard)
 
     TUNINGS = {
-      STANDART: {
+      STANDARD: {
         STRINGS: {
           1 => { NOTE: 'E' },
           2 => { NOTE: 'B' },

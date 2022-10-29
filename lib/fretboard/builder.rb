@@ -6,8 +6,8 @@ require 'fretboard/console'
 
 module Fretboard
   class Builder # rubocop:disable Style/Documentation, Metrics/ClassLength
-    # fretboard = Fretboard::Builder.new(:standart)
-    # fretboard = Fretboard::Builder.standart
+    # fretboard = Fretboard::Builder.new(:standard)
+    # fretboard = Fretboard::Builder.standard
     # fretboard = Fretboard::Builder.tuning_a
     # fretboard = Fretboard::Builder.open_a
     # fretboard = Fretboard::Builder.drop_a
@@ -42,7 +42,7 @@ module Fretboard
     DEFAULT_NUMBER_OF_FRETS = 12
 
     # METHODS_NAMES = %i[
-    #   standart
+    #   standard
     #   tuning_a
     #   open_a
     #   drop_a
@@ -79,8 +79,8 @@ module Fretboard
     #   end
     # end
 
-    def self.standart(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
-      new(:standart, number_of_frets)
+    def self.standard(number_of_frets = DEFAULT_NUMBER_OF_FRETS)
+      new(:standard, number_of_frets)
     end
 
     def self.tuning_a(number_of_frets = DEFAULT_NUMBER_OF_FRETS)

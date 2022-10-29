@@ -15,9 +15,9 @@ gem 'fretboard'
 ### Creates a fretboard with the specified tuning
 
 ```ruby
-fretboard = Fretboard::Builder.new(:standart)
+fretboard = Fretboard::Builder.new(:standard)
 # or
-fretboard = Fretboard::Builder.standart
+fretboard = Fretboard::Builder.standard
 ```
 
 [Supported guitar tunings](#supported-guitar-tunings)
@@ -58,7 +58,7 @@ fretboard.draw
 #### Drawing the fretboard
 
 ```
-bundle exec fretboard --draw-tuning standart
+bundle exec fretboard --draw-tuning standard
 ```
 
 <details>
@@ -81,7 +81,7 @@ bundle exec fretboard --draw-tuning standart
 #### Getting a list of supported guitar tunings.
 
 ```
-bundle exec fretboard --draw-tuning standart
+bundle exec fretboard --draw-tuning standard
 ```
 
 <details>
@@ -91,7 +91,7 @@ bundle exec fretboard --draw-tuning standart
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   | Tuning        | Notes                                |
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  | STANDART      | E, B, G, D, A, E                     |
+  | STANDARD      | E, B, G, D, A, E                     |
   | TUNING_A      | A, E, C, G, D, A                     |
   | OPEN_A        | E, A, E, C#/Db, A, E                 |
   | DROP_A        | B, F#/Gb, D, A, E, A                 |
@@ -125,10 +125,10 @@ bundle exec fretboard --draw-tuning standart
 ## Supported guitar tunings
 
 <details>
-  <summary>Standart (standart)</summary>
+  <summary>Standard (standard)</summary>
 
   ```
-  bundle exec fretboard --draw-tuning standart
+  bundle exec fretboard --draw-tuning standard
   ```
 
   ```
