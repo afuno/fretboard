@@ -200,7 +200,7 @@ module Fretboard
         return
       end
 
-      tuning = Fretboard::Tunings.get(@tuning)
+      tuning = Fretboard::Tunings.fetch(@tuning)
       strings = tuning[:STRINGS]
       number_of_strings = strings.size
 

@@ -2,7 +2,7 @@
 
 module Fretboard
   class Tunings # rubocop:disable Style/Documentation, Metrics/ClassLength
-    # Fretboard::Tunings.get(:standart)
+    # Fretboard::Tunings.fetch(:standart)
     # Fretboard::Tunings.exists?(:standart)
 
     TUNINGS = {
@@ -304,8 +304,8 @@ module Fretboard
       }
     }.freeze
 
-    def self.get(tuning_name)
-      new(tuning_name).get
+    def self.fetch(tuning_name)
+      new(tuning_name).fetch
     end
 
     def self.exists?(tuning_name)
@@ -316,7 +316,7 @@ module Fretboard
       @tuning_name = tuning_name.upcase.to_sym
     end
 
-    def get
+    def fetch
       TUNINGS[@tuning_name]
     end
 
