@@ -205,15 +205,15 @@ module Fretboard
       number_of_strings = strings.size
 
       (1..number_of_strings).each do |string_number|
-        puts
-        puts "String: #{string_number}"
-        puts
+        # puts
+        # puts "String: #{string_number}"
+        # puts
 
         current_note = strings[string_number][:NOTE]
 
         @data[string_number] = {}
 
-        puts "Fret: 0 (#{current_note})"
+        # puts "Fret: 0 (#{current_note})"
 
         @data[string_number][0] = current_note
 
@@ -223,7 +223,7 @@ module Fretboard
             sharp_or_flat:
           )
 
-          puts "Fret: #{fret} (#{next_note})"
+          # puts "Fret: #{fret} (#{next_note})"
 
           @data[string_number][fret] = next_note
 
@@ -231,8 +231,8 @@ module Fretboard
         end
       end
 
-      puts
-      puts 'done'
+      # puts
+      # puts 'done'
     end
 
     def draw(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
