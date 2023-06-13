@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'fretboard/notes'
+require "fretboard/notes"
 
 module Fretboard
-  class Note # rubocop:disable Style/Documentation
+  class Note
     # Fretboard::Note.next_for('C')
     # Fretboard::Note.next_for(['F#', 'Gb'])
     # Fretboard::Note.next_for('F#/Gb')
@@ -14,7 +14,7 @@ module Fretboard
       if note.is_a?(Array)
         note = case sharp_or_flat
                when :both
-                 note.join('/')
+                 note.join("/")
                when :sharp
                  note.first
                else

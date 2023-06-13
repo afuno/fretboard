@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-abort 'Please run fretboard from the root of the project' unless File.exist?('./Gemfile')
+abort "Please run fretboard from the root of the project" unless File.exist?("./Gemfile")
 
-require 'rubygems'
+require "rubygems"
 
 begin
-  require 'bundler'
+  require "bundler"
   Bundler.setup
 rescue StandardError
   # ...
@@ -14,6 +14,6 @@ end
 
 $LOAD_PATH << "#{__dir__}/../lib"
 
-require 'fretboard/parser'
+require "fretboard/parser"
 
 Fretboard::Parser.parse(ARGV)

@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 module Fretboard
-  MAJOR = 1
-  MINOR = 5
-  PATCH = 0
+  module VERSION
+    MAJOR = 1
+    MINOR = 5
+    PATCH = 0
 
-  VERSION = [
-    MAJOR,
-    MINOR,
-    PATCH
-  ].join('.')
+    STRING = [MAJOR, MINOR, PATCH].join(".")
+  end
 end

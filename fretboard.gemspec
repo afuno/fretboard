@@ -1,32 +1,39 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-require 'fretboard/version'
+require_relative "lib/fretboard/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fretboard'
-  spec.version       = Fretboard::VERSION
+  spec.name          = "fretboard"
+  spec.version       = Fretboard::VERSION::STRING
   spec.platform      = Gem::Platform::RUBY
-  spec.authors       = ['Anton Sokolov']
-  spec.email         = ['anton@sokolov.digital']
-  spec.homepage      = 'https://github.com/afuno/fretboard'
-  spec.licenses      = ['MIT']
-  spec.summary       = 'Tools for working with the guitar fretboard'
-  spec.description   = 'Tools for working with the guitar fretboard'
 
-  spec.files         = `git ls-files -z *.md *.gemspec bin lib`.split("\x0")
-  spec.require_paths = ['lib']
+  spec.authors       = ["Anton Sokolov"]
+  spec.email         = ["profox.rus@gmail.com"]
 
-  spec.executables   = ['fretboard']
+  spec.summary       = "Tools for working with the guitar fretboard"
+  spec.description   = spec.summary
+  spec.homepage      = "https://github.com/afuno/fretboard"
 
-  spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.license       = "MIT"
 
-  spec.required_ruby_version = '>= 3.1.0'
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["documentation_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = spec.homepage
+  spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
+  # spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/master/CHANGELOG.md"
 
-  spec.add_dependency 'activesupport', '~> 7.0.3'
-  spec.add_dependency 'colorize', '~> 0.8.1'
-  spec.add_dependency 'terminal-table', '~> 3.0.2'
-  spec.add_development_dependency 'rubocop', '~> 1.37.1'
+  spec.metadata["rubygems_mfa_required"] = "true"
+
+  spec.files = Dir["lib/**/*", "Rakefile", "README.md"]
+  spec.require_paths = ["lib"]
+  spec.executables   = ["fretboard"]
+
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
+
+  spec.add_runtime_dependency "activesupport", "~> 7.0"
+  spec.add_runtime_dependency "colorize", "~> 0.8"
+  spec.add_runtime_dependency "terminal-table", "~> 3.0"
+
+  spec.add_development_dependency "rubocop", "~> 1.50"
+  spec.add_development_dependency "rubocop-performance", "~> 1.17"
 end

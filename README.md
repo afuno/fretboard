@@ -1,4 +1,4 @@
-# Fretboard for Guitar
+# Fretboard
 
 Tools for working with the guitar fretboard.
 
@@ -7,7 +7,7 @@ Tools for working with the guitar fretboard.
 ## Installation
 
 ```ruby
-gem 'fretboard'
+gem "fretboard"
 ```
 
 ## Using
@@ -78,7 +78,7 @@ bundle exec fretboard --draw-tuning standard
   ```
 </details>
 
-#### Getting a list of supported guitar tunings.
+#### Getting a list of supported guitar tunings
 
 ```
 bundle exec fretboard --draw-tuning standard
