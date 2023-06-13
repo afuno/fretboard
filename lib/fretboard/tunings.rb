@@ -33,7 +33,7 @@ module Fretboard
           1 => { NOTE: "E" },
           2 => { NOTE: "A" },
           3 => { NOTE: "E" },
-          4 => { NOTE: ["C#", "Db"] },
+          4 => { NOTE: %w[C# Db] },
           5 => { NOTE: "A" },
           6 => { NOTE: "E" }
         }
@@ -42,7 +42,7 @@ module Fretboard
       DROP_A: {
         STRINGS: {
           1 => { NOTE: "B" },
-          2 => { NOTE: ["F#", "Gb"] },
+          2 => { NOTE: %w[F# Gb] },
           3 => { NOTE: "D" },
           4 => { NOTE: "A" },
           5 => { NOTE: "E" },
@@ -54,28 +54,28 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "C" },
           2 => { NOTE: "G" },
-          3 => { NOTE: ["D#", "Eb"] },
-          4 => { NOTE: ["A#", "Bb"] },
+          3 => { NOTE: %w[D# Eb] },
+          4 => { NOTE: %w[A# Bb] },
           5 => { NOTE: "F" },
-          6 => { NOTE: ["A#", "Bb"] }
+          6 => { NOTE: %w[A# Bb] }
         }
       },
 
       DROP_A_FLAT: {
         STRINGS: {
-          1 => { NOTE: ["A#", "Bb"] },
+          1 => { NOTE: %w[A# Bb] },
           2 => { NOTE: "F" },
-          3 => { NOTE: ["C#", "Db"] },
-          4 => { NOTE: ["G#", "Ab"] },
-          5 => { NOTE: ["D#", "Eb"] },
-          6 => { NOTE: ["G#", "Ab"] }
+          3 => { NOTE: %w[C# Db] },
+          4 => { NOTE: %w[G# Ab] },
+          5 => { NOTE: %w[D# Eb] },
+          6 => { NOTE: %w[G# Ab] }
         }
       },
 
       TUNING_B: {
         STRINGS: {
           1 => { NOTE: "B" },
-          2 => { NOTE: ["F#", "Gb"] },
+          2 => { NOTE: %w[F# Gb] },
           3 => { NOTE: "D" },
           4 => { NOTE: "A" },
           5 => { NOTE: "E" },
@@ -85,22 +85,22 @@ module Fretboard
 
       OPEN_B: {
         STRINGS: {
-          1 => { NOTE: ["D#", "Eb"] },
+          1 => { NOTE: %w[D# Eb] },
           2 => { NOTE: "B" },
-          3 => { NOTE: ["F#", "Gb"] },
+          3 => { NOTE: %w[F# Gb] },
           4 => { NOTE: "B" },
-          5 => { NOTE: ["F#", "Gb"] },
+          5 => { NOTE: %w[F# Gb] },
           6 => { NOTE: "B" }
         }
       },
 
       DROP_B: {
         STRINGS: {
-          1 => { NOTE: ["C#", "Db"] },
-          2 => { NOTE: ["G#", "Ab"] },
+          1 => { NOTE: %w[C# Db] },
+          2 => { NOTE: %w[G# Ab] },
           3 => { NOTE: "E" },
           4 => { NOTE: "B" },
-          5 => { NOTE: ["F#", "Gb"] },
+          5 => { NOTE: %w[F# Gb] },
           6 => { NOTE: "B" }
         }
       },
@@ -109,10 +109,10 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "C" },
           2 => { NOTE: "G" },
-          3 => { NOTE: ["D#", "Eb"] },
-          4 => { NOTE: ["A#", "Bb"] },
+          3 => { NOTE: %w[D# Eb] },
+          4 => { NOTE: %w[A# Bb] },
           5 => { NOTE: "F" },
-          6 => { NOTE: ["A#", "Bb"] }
+          6 => { NOTE: %w[A# Bb] }
         }
       },
 
@@ -120,8 +120,8 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "C" },
           2 => { NOTE: "G" },
-          3 => { NOTE: ["D#", "Eb"] },
-          4 => { NOTE: ["A#", "Bb"] },
+          3 => { NOTE: %w[D# Eb] },
+          4 => { NOTE: %w[A# Bb] },
           5 => { NOTE: "F" },
           6 => { NOTE: "C" }
         }
@@ -164,7 +164,7 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "D" },
           2 => { NOTE: "A" },
-          3 => { NOTE: ["F#", "Gb"] },
+          3 => { NOTE: %w[F# Gb] },
           4 => { NOTE: "D" },
           5 => { NOTE: "A" },
           6 => { NOTE: "D" }
@@ -219,7 +219,7 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "E" },
           2 => { NOTE: "B" },
-          3 => { NOTE: ["G#", "Ab"] },
+          3 => { NOTE: %w[G# Ab] },
           4 => { NOTE: "E" },
           5 => { NOTE: "B" },
           6 => { NOTE: "E" }
@@ -230,9 +230,9 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "F" },
           2 => { NOTE: "C" },
-          3 => { NOTE: ["G#", "Ab"] },
-          4 => { NOTE: ["D#", "Eb"] },
-          5 => { NOTE: ["A#", "Bb"] },
+          3 => { NOTE: %w[G# Ab] },
+          4 => { NOTE: %w[D# Eb] },
+          5 => { NOTE: %w[A# Bb] },
           6 => { NOTE: "F" }
         }
       },
@@ -241,7 +241,7 @@ module Fretboard
         STRINGS: {
           1 => { NOTE: "G" },
           2 => { NOTE: "D" },
-          3 => { NOTE: ["A#", "Bb"] },
+          3 => { NOTE: %w[A# Bb] },
           4 => { NOTE: "F" },
           5 => { NOTE: "C" },
           6 => { NOTE: "G" }
@@ -273,7 +273,7 @@ module Fretboard
       OPEN_G_MINOR: {
         STRINGS: {
           1 => { NOTE: "D" },
-          2 => { NOTE: ["A#", "Bb"] },
+          2 => { NOTE: %w[A# Bb] },
           3 => { NOTE: "G" },
           4 => { NOTE: "D" },
           5 => { NOTE: "G" },
@@ -283,12 +283,12 @@ module Fretboard
 
       DROP_G_SHARP: {
         STRINGS: {
-          1 => { NOTE: ["A#", "Bb"] },
+          1 => { NOTE: %w[A# Bb] },
           2 => { NOTE: "F" },
-          3 => { NOTE: ["C#", "Db"] },
-          4 => { NOTE: ["G#", "Ab"] },
-          5 => { NOTE: ["D#", "Eb"] },
-          6 => { NOTE: ["G#", "Ab"] }
+          3 => { NOTE: %w[C# Db] },
+          4 => { NOTE: %w[G# Ab] },
+          5 => { NOTE: %w[D# Eb] },
+          6 => { NOTE: %w[G# Ab] }
         }
       },
 
