@@ -6,7 +6,7 @@ module Fretboard
     # Fretboard::Notes.all(:sharp)
     # Fretboard::Notes.all(:flat)
 
-    BASIS_NOTES = {
+    BASIC_NOTES = {
       1 => "C",
       2 => %w[C# Db],
       3 => "D",
@@ -22,7 +22,7 @@ module Fretboard
     }.freeze
 
     def self.all(sharp_or_flat = :sharp) # rubocop:disable Metrics/MethodLength
-      BASIS_NOTES.map do |_key, value|
+      BASIC_NOTES.map do |_key, value|
         result = value
 
         if value.is_a?(Array)
