@@ -2,10 +2,10 @@
 
 # require 'active_support/core_ext/hash'
 
-require 'fretboard/console'
+require "fretboard/console"
 
 module Fretboard
-  class Builder # rubocop:disable Style/Documentation, Metrics/ClassLength
+  class Builder # rubocop:disable Metrics/ClassLength
     # fretboard = Fretboard::Builder.new(:standard)
     # fretboard = Fretboard::Builder.standard
     # fretboard = Fretboard::Builder.tuning_a
@@ -196,7 +196,7 @@ module Fretboard
 
     def build(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       unless Fretboard::Tunings.exists?(@tuning)
-        Fretboard::Console.danger('Unable to detect guitar tuning')
+        Fretboard::Console.danger("Unable to detect guitar tuning")
         return
       end
 
@@ -220,7 +220,7 @@ module Fretboard
         (1..@number_of_frets).each do |fret|
           next_note = Fretboard::Note.next_for(
             current_note,
-            sharp_or_flat:
+            sharp_or_flat: sharp_or_flat
           )
 
           # puts "Fret: #{fret} (#{next_note})"
@@ -237,7 +237,7 @@ module Fretboard
 
     def draw(sharp_or_flat: :both) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       unless @data.any?
-        Fretboard::Console.danger('Build the guitar fretboard data for drawing')
+        Fretboard::Console.danger("Build the guitar fretboard data for drawing")
         return
       end
 
@@ -247,7 +247,7 @@ module Fretboard
       @data.each_pair do |string_number, string_notes|
         row = []
 
-        headings << '№'
+        headings << "№"
         row << string_number
 
         headings << 0
@@ -257,7 +257,7 @@ module Fretboard
         if open_note.is_a?(Array)
           open_note = case sharp_or_flat
                       when :both
-                        open_note.join('/')
+                        open_note.join("/")
                       when :sharp
                         open_note.first
                       else

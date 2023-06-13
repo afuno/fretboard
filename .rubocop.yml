@@ -1,6 +1,4 @@
 require:
-  - rubocop-rspec
-  - rubocop-rake
   - rubocop-performance
 
 AllCops:
@@ -48,15 +46,3 @@ Style/HashSyntax:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-
-RSpec/ExampleLength:
-  Enabled: false
-
-RSpec/IndexedLet:
-  Max: 3
-
-RSpec/MultipleMemoizedHelpers:
-  Max: 6
-
-RSpec/NestedGroups:
-  Max: 5

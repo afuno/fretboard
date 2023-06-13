@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/object/blank'
-require 'optparse'
+require "active_support/core_ext/object/blank"
+require "optparse"
 
-require 'fretboard/builder'
-require 'fretboard/console'
-require 'fretboard/note'
-require 'fretboard/tunings'
+require "fretboard/builder"
+require "fretboard/console"
+require "fretboard/note"
+require "fretboard/tunings"
 
 module Fretboard
-  class Parser # rubocop:disable Style/Documentation
+  class Parser
     attr_reader :args
 
     def self.parse(args)
@@ -30,25 +30,25 @@ module Fretboard
 
     def parser # rubocop:disable Metrics/MethodLength
       OptionParser.new do |opts|
-        opts.banner = 'Usage: fretboard [options]'
+        opts.banner = "Usage: fretboard [options]"
 
-        opts.on('-v', '--version', 'The current version of the gem') do
+        opts.on("-v", "--version", "The current version of the gem") do
           Fretboard::Console.log(Fretboard::VERSION)
           exit
         end
 
-        opts.on('-h', '--help', 'Prints this help') do
+        opts.on("-h", "--help", "Prints this help") do
           Fretboard::Console.log(opts.to_s)
           exit
         end
 
-        opts.on('-d', '--draw-tuning CODE', 'Build a guitar tuning') do |code|
+        opts.on("-d", "--draw-tuning CODE", "Build a guitar tuning") do |code|
           fretboard = Fretboard::Builder.new(code.to_sym)
           fretboard.build
           fretboard.draw
         end
 
-        opts.on('-l', '--tunings-list', 'List of supported guitar tunings') do
+        opts.on("-l", "--tunings-list", "List of supported guitar tunings") do
           Fretboard::Tunings.draw_list
         end
       end
