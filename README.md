@@ -1,5 +1,10 @@
 # Fretboard
 
+<p align="left">
+  <a href="https://rubygems.org/gems/fretboard"><img src="https://img.shields.io/gem/v/fretboard?logo=rubygems&logoColor=fff" alt="Gem version"></a>
+  <a href="https://github.com/afuno/fretboard/releases"><img src="https://img.shields.io/github/release-date/afuno/fretboard" alt="Release Date"></a>
+</p>
+
 Tools for working with the guitar fretboard.
 
 [Documentation](https://www.rubydoc.info/gems/fretboard)
