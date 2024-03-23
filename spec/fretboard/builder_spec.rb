@@ -13,6 +13,21 @@ RSpec.describe Fretboard::Builder do
     end
   end
 
+  shared_examples_for "returns expected draw" do |tuning:, data:|
+    it "returns expected data", :aggregate_failures do
+      result = described_class.new(tuning)
+
+      result.build
+      result.draw
+
+      expect(Fretboard::Console).to(
+        have_received(:print_table).with(*data).once
+      )
+    end
+  end
+
+  before { allow(Fretboard::Console).to receive(:print_table).and_call_original }
+
   context "when tuning is `standard`" do
     include_examples "returns expected data", tuning: :standard, data: {
       1 => { 0 => "E", 1 => "F", 2 => "F#/Gb", 3 => "G", 4 => "G#/Ab", 5 => "A", 6 => "A#/Bb",
@@ -28,6 +43,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "E", 1 => "F", 2 => "F#/Gb", 3 => "G", 4 => "G#/Ab", 5 => "A", 6 => "A#/Bb",
              7 => "B", 8 => "C", 9 => "C#/Db", 10 => "D", 11 => "D#/Eb", 12 => "E" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `tuning_a`" do
@@ -45,6 +72,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "A", 1 => "A#/Bb", 2 => "B", 3 => "C", 4 => "C#/Db", 5 => "D", 6 => "D#/Eb",
              7 => "E", 8 => "F", 9 => "F#/Gb", 10 => "G", 11 => "G#/Ab", 12 => "A" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_a`" do
@@ -62,6 +101,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "E", 1 => "F", 2 => "F#/Gb", 3 => "G", 4 => "G#/Ab", 5 => "A", 6 => "A#/Bb",
              7 => "B", 8 => "C", 9 => "C#/Db", 10 => "D", 11 => "D#/Eb", 12 => "E" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_a`" do
@@ -79,6 +130,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "A", 1 => "A#/Bb", 2 => "B", 3 => "C", 4 => "C#/Db", 5 => "D", 6 => "D#/Eb",
              7 => "E", 8 => "F", 9 => "F#/Gb", 10 => "G", 11 => "G#/Ab", 12 => "A" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_a_sharp`" do
@@ -96,6 +159,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => ["A#", "Bb"], 1 => "B", 2 => "C", 3 => "C#/Db", 4 => "D", 5 => "D#/Eb", 6 => "E",
              7 => "F", 8 => "F#/Gb", 9 => "G", 10 => "G#/Ab", 11 => "A", 12 => "A#/Bb" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_a_flat`" do
@@ -113,6 +188,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => ["G#", "Ab"], 1 => "A", 2 => "A#/Bb", 3 => "B", 4 => "C", 5 => "C#/Db", 6 => "D",
              7 => "D#/Eb", 8 => "E", 9 => "F", 10 => "F#/Gb", 11 => "G", 12 => "G#/Ab" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `tuning_b`" do
@@ -130,6 +217,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "B", 1 => "C", 2 => "C#/Db", 3 => "D", 4 => "D#/Eb", 5 => "E", 6 => "F",
              7 => "F#/Gb", 8 => "G", 9 => "G#/Ab", 10 => "A", 11 => "A#/Bb", 12 => "B" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_b`" do
@@ -147,6 +246,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "B", 1 => "C", 2 => "C#/Db", 3 => "D", 4 => "D#/Eb", 5 => "E", 6 => "F",
              7 => "F#/Gb", 8 => "G", 9 => "G#/Ab", 10 => "A", 11 => "A#/Bb", 12 => "B" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_b`" do
@@ -164,6 +275,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "B", 1 => "C", 2 => "C#/Db", 3 => "D", 4 => "D#/Eb", 5 => "E", 6 => "F",
              7 => "F#/Gb", 8 => "G", 9 => "G#/Ab", 10 => "A", 11 => "A#/Bb", 12 => "B" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_b_flat`" do
@@ -181,6 +304,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => ["A#", "Bb"], 1 => "B", 2 => "C", 3 => "C#/Db", 4 => "D", 5 => "D#/Eb", 6 => "E",
              7 => "F", 8 => "F#/Gb", 9 => "G", 10 => "G#/Ab", 11 => "A", 12 => "A#/Bb" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `tuning_c`" do
@@ -198,6 +333,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "C", 1 => "C#/Db", 2 => "D", 3 => "D#/Eb", 4 => "E", 5 => "F", 6 => "F#/Gb",
              7 => "G", 8 => "G#/Ab", 9 => "A", 10 => "A#/Bb", 11 => "B", 12 => "C" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_c`" do
@@ -215,6 +362,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "C", 1 => "C#/Db", 2 => "D", 3 => "D#/Eb", 4 => "E", 5 => "F", 6 => "F#/Gb",
              7 => "G", 8 => "G#/Ab", 9 => "A", 10 => "A#/Bb", 11 => "B", 12 => "C" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_c`" do
@@ -232,6 +391,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "C", 1 => "C#/Db", 2 => "D", 3 => "D#/Eb", 4 => "E", 5 => "F", 6 => "F#/Gb",
              7 => "G", 8 => "G#/Ab", 9 => "A", 10 => "A#/Bb", 11 => "B", 12 => "C" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `tuning_d`" do
@@ -249,6 +420,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_d`" do
@@ -266,6 +449,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_d_minor`" do
@@ -283,6 +478,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_d`" do
@@ -300,6 +507,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `double_drop_d`" do
@@ -317,6 +536,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `modal_d`" do
@@ -334,6 +565,19 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [
+        [
+          1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"
+        ],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_e`" do
@@ -351,6 +595,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "E", 1 => "F", 2 => "F#/Gb", 3 => "G", 4 => "G#/Ab", 5 => "A", 6 => "A#/Bb",
              7 => "B", 8 => "C", 9 => "C#/Db", 10 => "D", 11 => "D#/Eb", 12 => "E" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `tuning_f`" do
@@ -368,6 +624,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "F", 1 => "F#/Gb", 2 => "G", 3 => "G#/Ab", 4 => "A", 5 => "A#/Bb", 6 => "B",
              7 => "C", 8 => "C#/Db", 9 => "D", 10 => "D#/Eb", 11 => "E", 12 => "F" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_f`" do
@@ -385,6 +653,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "F", 1 => "F#/Gb", 2 => "G", 3 => "G#/Ab", 4 => "A", 5 => "A#/Bb", 6 => "B",
              7 => "C", 8 => "C#/Db", 9 => "D", 10 => "D#/Eb", 11 => "E", 12 => "F" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `tuning_g`" do
@@ -402,6 +682,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "G", 1 => "G#/Ab", 2 => "A", 3 => "A#/Bb", 4 => "B", 5 => "C", 6 => "C#/Db",
              7 => "D", 8 => "D#/Eb", 9 => "E", 10 => "F", 11 => "F#/Gb", 12 => "G" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_g`" do
@@ -419,6 +711,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `open_g_minor`" do
@@ -436,6 +740,17 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `drop_g_sharp`" do
@@ -453,6 +768,18 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => ["G#", "Ab"], 1 => "A", 2 => "A#/Bb", 3 => "B", 4 => "C", 5 => "C#/Db", 6 => "D",
              7 => "D#/Eb", 8 => "E", 9 => "F", 10 => "F#/Gb", 11 => "G", 12 => "G#/Ab" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 
   context "when tuning is `modal_g`" do
@@ -470,5 +797,17 @@ RSpec.describe Fretboard::Builder do
       6 => { 0 => "D", 1 => "D#/Eb", 2 => "E", 3 => "F", 4 => "F#/Gb", 5 => "G", 6 => "G#/Ab",
              7 => "A", 8 => "A#/Bb", 9 => "B", 10 => "C", 11 => "C#/Db", 12 => "D" }
     }
+
+    include_examples "returns expected draw", tuning: :standard, data: [
+      ["№", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      [
+        [1, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"],
+        [2, "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+        [3, "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G"],
+        [4, "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D"],
+        [5, "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"],
+        [6, "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E"]
+      ]
+    ]
   end
 end
