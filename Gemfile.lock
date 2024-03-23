@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     fretboard (1.5.1)
-      activesupport (>= 7.0)
+      activesupport (>= 5.1)
       colorize (>= 0.8)
       terminal-table (>= 3.0)
 
