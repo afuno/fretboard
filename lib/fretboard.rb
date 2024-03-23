@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "zeitwerk"
-
 require "active_support/core_ext/object/blank"
 require "active_support/core_ext/hash/except"
 
-loader = Zeitwerk::Loader.for_gem
-loader.setup
+require "fretboard/builder"
+require "fretboard/note"
+require "fretboard/notes"
+require "fretboard/tunings"
 
 module Fretboard
   # extend Constants

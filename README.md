@@ -81,7 +81,7 @@ bundle exec fretboard --draw-tuning standard
 #### Getting a list of supported guitar tunings
 
 ```
-bundle exec fretboard --draw-tuning standard
+bundle exec fretboard --tunings-list
 ```
 
 <details>

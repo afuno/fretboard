@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-# require 'active_support/core_ext/hash'
-
-# require "fretboard/console"
-
 module Fretboard
   class Builder # rubocop:disable Metrics/ClassLength
     # fretboard = Fretboard::Builder.new(:standard)

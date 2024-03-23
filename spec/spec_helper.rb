@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
-require "zeitwerk"
-# require "forwardable"
-require "fretboard"
+require "active_support/core_ext/object/blank"
+require "active_support/core_ext/hash/except"
 
-# loader = Zeitwerk::Loader.new
-# loader.push_dir(File.expand_path("../examples", __dir__))
-# loader.setup
-
-# Dir[File.join(__dir__, "support", "**", "*.rb")].each { |file| require file }
-
-# I18n.load_path += Dir["#{File.expand_path('config/locales')}/*.yml"]
+require "fretboard/builder"
+require "fretboard/console"
+require "fretboard/note"
+require "fretboard/tunings"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
