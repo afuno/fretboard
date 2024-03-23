@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "fretboard/notes"
+# require "fretboard/notes"
 
 module Fretboard
   class Note

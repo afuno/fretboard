@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# require "zeitwerk"
+require "zeitwerk"
 # require "forwardable"
-# require "fretboard"
+require "fretboard"
 
 # loader = Zeitwerk::Loader.new
 # loader.push_dir(File.expand_path("../examples", __dir__))

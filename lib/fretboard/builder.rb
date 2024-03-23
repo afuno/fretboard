@@ -2,7 +2,7 @@
 
 # require 'active_support/core_ext/hash'
 
-require "fretboard/console"
+# require "fretboard/console"
 
 module Fretboard
   class Builder # rubocop:disable Metrics/ClassLength
