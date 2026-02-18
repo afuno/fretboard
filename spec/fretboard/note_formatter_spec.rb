@@ -2,7 +2,7 @@
 
 RSpec.describe Fretboard::NoteFormatter do
   describe ".format" do
-    subject(:formatted_note) { described_class.format(note, sharp_or_flat: sharp_or_flat) }
+    subject(:formatted_note) { described_class.format(note, sharp_or_flat:) }
 
     let(:sharp_or_flat) { :both }
 

@@ -19,7 +19,7 @@ module Fretboard
 
     def self.all(sharp_or_flat = :sharp)
       BASIC_NOTES.map do |_key, value|
-        Fretboard::NoteFormatter.format(value, sharp_or_flat: sharp_or_flat)
+        Fretboard::NoteFormatter.format(value, sharp_or_flat:)
       end
     end
 

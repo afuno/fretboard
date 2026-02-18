@@ -37,7 +37,7 @@ module Fretboard
         (1..@number_of_frets).each do |fret|
           next_note = Fretboard::Note.next_for(
             current_note,
-            sharp_or_flat: sharp_or_flat
+            sharp_or_flat:
           )
 
           @data[string_number][fret] = next_note
@@ -63,7 +63,7 @@ module Fretboard
 
         headings << 0
 
-        open_note = Fretboard::NoteFormatter.format(string_notes[0], sharp_or_flat: sharp_or_flat)
+        open_note = Fretboard::NoteFormatter.format(string_notes[0], sharp_or_flat:)
 
         row << open_note
 
