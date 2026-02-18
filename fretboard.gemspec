@@ -30,9 +30,9 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = Gem::Requirement.new(">= 2.7")
 
-  spec.add_runtime_dependency "activesupport", ">= 5.1"
-  spec.add_runtime_dependency "colorize", ">= 0.8"
-  spec.add_runtime_dependency "terminal-table", ">= 4.0"
+  spec.add_dependency "activesupport", ">= 5.1"
+  spec.add_dependency "colorize", ">= 0.8"
+  spec.add_dependency "terminal-table", ">= 4.0"
 
   spec.add_development_dependency "appraisal", ">= 2.5"
   spec.add_development_dependency "rake", ">= 13.0"
