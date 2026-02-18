@@ -9,6 +9,7 @@ require "fretboard/builder"
 require "fretboard/console"
 require "fretboard/note"
 require "fretboard/tunings"
+require "fretboard/version"
 
 module Fretboard
   class Parser
@@ -24,8 +25,10 @@ module Fretboard
 
     def parse
       parser.parse!(args)
+    rescue Fretboard::Exceptions::Base, OptionParser::ParseError => e
+      Fretboard::Console.danger(e.message)
     rescue StandardError => e
-      Fretboard::Console.danger("Ambiguously completable string is encountered\n#{e}")
+      Fretboard::Console.danger("Unexpected error: #{e.message}")
     end
 
     private
@@ -35,7 +38,7 @@ module Fretboard
         opts.banner = "Usage: fretboard [options]"
 
         opts.on("-v", "--version", "The current version of the gem") do
-          Fretboard::Console.log(Fretboard::VERSION)
+          Fretboard::Console.log(Fretboard::VERSION::STRING)
           exit
         end
 
