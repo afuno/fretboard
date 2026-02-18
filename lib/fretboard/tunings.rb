@@ -31,9 +31,9 @@ module Fretboard
       OPEN_A: {
         STRINGS: {
           1 => { NOTE: "E" },
-          2 => { NOTE: "A" },
-          3 => { NOTE: "E" },
-          4 => { NOTE: %w[C# Db] },
+          2 => { NOTE: %w[C# Db] },
+          3 => { NOTE: "A" },
+          4 => { NOTE: "E" },
           5 => { NOTE: "A" },
           6 => { NOTE: "E" }
         }
