@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "fretboard/exceptions/base"
-
 module Fretboard
   module Exceptions
     class UnknownTuning < Base

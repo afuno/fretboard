@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require "fretboard/exceptions/unknown_note"
-require "fretboard/note_formatter"
-require "fretboard/notes"
-
 module Fretboard
   class Note
     def self.next_for(note, sharp_or_flat: :both)

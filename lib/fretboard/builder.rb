@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 
-require "fretboard/console"
-require "fretboard/tunings"
-require "fretboard/exceptions/unknown_tuning"
-require "fretboard/exceptions/not_built"
-require "fretboard/note_formatter"
-
 module Fretboard
   class Builder
     DEFAULT_NUMBER_OF_FRETS = 12

@@ -1,18 +1,6 @@
 # frozen_string_literal: true
 
-require "active_support/core_ext/object/blank"
-require "active_support/core_ext/hash/except"
-
-require "fretboard/exceptions/base"
-require "fretboard/exceptions/unknown_tuning"
-require "fretboard/exceptions/unknown_note"
-require "fretboard/exceptions/not_built"
-
-require "fretboard/note_formatter"
-require "fretboard/builder"
-require "fretboard/console"
-require "fretboard/note"
-require "fretboard/tunings"
+require "fretboard"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

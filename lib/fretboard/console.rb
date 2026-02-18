@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require "colorize"
-require "terminal-table"
-
 module Fretboard
   class Console
     def self.log(text)

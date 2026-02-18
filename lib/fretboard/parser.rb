@@ -1,15 +1,6 @@
 # frozen_string_literal: true
 
-require "active_support/core_ext/object/blank"
-require "active_support/core_ext/hash/except"
-
 require "optparse"
-
-require "fretboard/builder"
-require "fretboard/console"
-require "fretboard/note"
-require "fretboard/tunings"
-require "fretboard/version"
 
 module Fretboard
   class Parser
