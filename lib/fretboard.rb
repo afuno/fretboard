@@ -6,6 +6,7 @@ require "active_support/core_ext/object/blank"
 require "active_support/core_ext/hash/except"
 
 require "colorize"
+require "optparse"
 require "terminal-table"
 
 loader = Zeitwerk::Loader.for_gem

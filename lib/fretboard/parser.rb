@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "optparse"
-
 module Fretboard
   class Parser
     attr_reader :args
