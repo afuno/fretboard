@@ -2,10 +2,6 @@
 
 module Fretboard
   class Notes
-    # Fretboard::Notes.all(:both)
-    # Fretboard::Notes.all(:sharp)
-    # Fretboard::Notes.all(:flat)
-
     BASIC_NOTES = {
       1 => "C",
       2 => %w[C# Db],
@@ -21,22 +17,9 @@ module Fretboard
       12 => "B"
     }.freeze
 
-    def self.all(sharp_or_flat = :sharp) # rubocop:disable Metrics/MethodLength
+    def self.all(sharp_or_flat = :sharp)
       BASIC_NOTES.map do |_key, value|
-        result = value
-
-        if value.is_a?(Array)
-          result = case sharp_or_flat
-                   when :both
-                     value.join("/")
-                   when :sharp
-                     value.first
-                   else
-                     value.last
-                   end
-        end
-
-        result
+        Fretboard::NoteFormatter.format(value, sharp_or_flat: sharp_or_flat)
       end
     end
 
