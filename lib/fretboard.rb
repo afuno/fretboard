@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
-require "active_support/core_ext/object/blank"
-require "active_support/core_ext/hash/except"
+require "zeitwerk"
 
-require "fretboard/builder"
-require "fretboard/note"
-require "fretboard/notes"
-require "fretboard/tunings"
+require "colorize"
+require "optparse"
+require "terminal-table"
 
-module Fretboard
-  # extend Constants
-end
+loader = Zeitwerk::Loader.for_gem
+loader.setup
+
+module Fretboard; end
 
 require "fretboard/engine" if defined?(Rails::Engine)

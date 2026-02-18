@@ -1,15 +1,5 @@
 # frozen_string_literal: true
 
-require "active_support/core_ext/object/blank"
-require "active_support/core_ext/hash/except"
-
-require "optparse"
-
-require "fretboard/builder"
-require "fretboard/console"
-require "fretboard/note"
-require "fretboard/tunings"
-
 module Fretboard
   class Parser
     attr_reader :args
@@ -24,8 +14,10 @@ module Fretboard
 
     def parse
       parser.parse!(args)
+    rescue Fretboard::Exceptions::Base, OptionParser::ParseError => e
+      Fretboard::Console.danger(e.message)
     rescue StandardError => e
-      Fretboard::Console.danger("Ambiguously completable string is encountered\n#{e}")
+      Fretboard::Console.danger("Unexpected error: #{e.message}")
     end
 
     private
@@ -35,7 +27,7 @@ module Fretboard
         opts.banner = "Usage: fretboard [options]"
 
         opts.on("-v", "--version", "The current version of the gem") do
-          Fretboard::Console.log(Fretboard::VERSION)
+          Fretboard::Console.log(Fretboard::VERSION::STRING)
           exit
         end
 
