@@ -1,23 +1,40 @@
-# Fretboard
+<div align="center">
 
-<p align="left">
-  <a href="https://rubygems.org/gems/fretboard"><img src="https://img.shields.io/gem/v/fretboard?logo=rubygems&logoColor=fff" alt="Gem version"></a>
-  <a href="https://github.com/afuno/fretboard/releases"><img src="https://img.shields.io/github/release-date/afuno/fretboard" alt="Release Date"></a>
-</p>
+# Fretboard
 
 Tools for working with the guitar fretboard.
 
-[Documentation](https://www.rubydoc.info/gems/fretboard)
+</div>
 
-## Installation
+<div align="center">
+
+[![Gem version](https://img.shields.io/gem/v/fretboard?logo=rubygems&logoColor=fff)](https://rubygems.org/gems/fretboard)
+[![Release Date](https://img.shields.io/github/release-date/afuno/fretboard)](https://github.com/afuno/fretboard/releases)
+[![Downloads](https://img.shields.io/gem/dt/fretboard)](https://rubygems.org/gems/fretboard)
+[![Ruby version](https://img.shields.io/badge/Ruby-3.2+-red)](https://github.com/afuno/fretboard)
+
+</div>
+
+## 💡 Why Fretboard?
+
+- 🎸 **27 Guitar Tunings** — Standard, Open, Drop, Modal and more
+- 🎹 **Chromatic Notes** — Full sharp/flat notation support
+- 📊 **Visual Fretboard** — ASCII table rendering in console
+- ⚡ **CLI Tool** — Draw any tuning from the command line
+- 🔧 **Ruby API** — Programmable fretboard data builder
+- 🛤️ **Rails Ready** — Built-in Rails::Engine for integration
+
+## 🚀 Quick Start
+
+### Installation
 
 ```ruby
 gem "fretboard"
 ```
 
-## Using
+### Ruby API
 
-### Creates a fretboard with the specified tuning
+Creates a fretboard with the specified tuning:
 
 ```ruby
 fretboard = Fretboard::Builder.new(:standard)
@@ -25,7 +42,7 @@ fretboard = Fretboard::Builder.new(:standard)
 fretboard = Fretboard::Builder.standard
 ```
 
-[Supported guitar tunings](#supported-guitar-tunings)
+[Supported guitar tunings](#-supported-guitar-tunings)
 
 Creating the fretboard data:
 
@@ -58,9 +75,9 @@ fretboard.draw
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
-### Using from the console
+### CLI
 
-#### Drawing the fretboard
+Drawing the fretboard:
 
 ```
 bundle exec fretboard --draw-tuning standard
@@ -83,7 +100,7 @@ bundle exec fretboard --draw-tuning standard
   ```
 </details>
 
-#### Getting a list of supported guitar tunings
+Getting a list of supported guitar tunings:
 
 ```
 bundle exec fretboard --tunings-list
@@ -127,7 +144,39 @@ bundle exec fretboard --tunings-list
   ```
 </details>
 
-## Supported guitar tunings
+## 🎵 Supported Guitar Tunings
+
+| Tuning | Notes |
+|--------|-------|
+| Standard | E, B, G, D, A, E |
+| Tuning A | A, E, C, G, D, A |
+| Open A | E, A, E, C#/Db, A, E |
+| Drop A | B, F#/Gb, D, A, E, A |
+| Drop A# | C, G, D#/Eb, A#/Bb, F, A#/Bb |
+| Drop Ab | A#/Bb, F, C#/Db, G#/Ab, D#/Eb, G#/Ab |
+| Tuning B | B, F#/Gb, D, A, E, B |
+| Open B | D#/Eb, B, F#/Gb, B, F#/Gb, B |
+| Drop B | C#/Db, G#/Ab, E, B, F#/Gb, B |
+| Drop Bb | C, G, D#/Eb, A#/Bb, F, A#/Bb |
+| Tuning C | C, G, D#/Eb, A#/Bb, F, C |
+| Open C | E, C, G, C, G, C |
+| Drop C | D, A, F, C, G, C |
+| Tuning D | D, A, F, C, G, D |
+| Open D | D, A, F#/Gb, D, A, D |
+| Open D Minor | D, A, F, D, A, D |
+| Drop D | E, B, G, D, A, D |
+| Double Drop D | D, B, G, D, A, D |
+| Modal D | D, A, G, D, A, D |
+| Open E | E, B, G#/Ab, E, B, E |
+| Tuning F | F, C, G#/Ab, D#/Eb, A#/Bb, F |
+| Tuning G | G, D, A#/Bb, F, C, G |
+| Open F | F, C, F, C, A, F |
+| Open G | D, B, G, D, G, D |
+| Open G Minor | D, A#/Bb, G, D, G, D |
+| Drop G# | A#/Bb, F, C#/Db, G#/Ab, D#/Eb, G#/Ab |
+| Modal G | D, C, G, D, G, D |
+
+### Fretboard Diagrams
 
 <details>
   <summary>Standard (standard)</summary>
@@ -151,7 +200,7 @@ bundle exec fretboard --tunings-list
 </details>
 
 <details>
-  <summary>A Tuning (tuning_a)</summary>
+  <summary>Tuning A (tuning_a)</summary>
 
   ```
   bundle exec fretboard --draw-tuning tuning_a
@@ -256,7 +305,7 @@ bundle exec fretboard --tunings-list
 </details>
 
 <details>
-  <summary>B Tuning (tuning_b)</summary>
+  <summary>Tuning B (tuning_b)</summary>
 
   ```
   bundle exec fretboard --draw-tuning tuning_b
@@ -340,7 +389,7 @@ bundle exec fretboard --tunings-list
 </details>
 
 <details>
-  <summary>C Tuning (tuning_c)</summary>
+  <summary>Tuning C (tuning_c)</summary>
 
   ```
   bundle exec fretboard --draw-tuning tuning_c
@@ -403,7 +452,7 @@ bundle exec fretboard --tunings-list
 </details>
 
 <details>
-  <summary>D Tuning (tuning_d)</summary>
+  <summary>Tuning D (tuning_d)</summary>
 
   ```
   bundle exec fretboard --draw-tuning tuning_d
@@ -550,7 +599,7 @@ bundle exec fretboard --tunings-list
 </details>
 
 <details>
-  <summary>F Tuning (tuning_f)</summary>
+  <summary>Tuning F (tuning_f)</summary>
 
   ```
   bundle exec fretboard --draw-tuning tuning_f
@@ -567,6 +616,27 @@ bundle exec fretboard --tunings-list
   | 5 | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A  | A#/Bb |
   | 6 | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E  | F     |
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
+</details>
+
+<details>
+  <summary>Tuning G (tuning_g)</summary>
+
+  ```
+  bundle exec fretboard --draw-tuning tuning_g
+  ```
+
+  ```
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | № | 0     | 1     | 2 | 3     | 4     | 5     | 6     | 7 | 8     | 9 | 10    | 11    | 12    |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  | 1 | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     |
+  | 2 | D     | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     |
+  | 3 | A#/Bb | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb |
+  | 4 | F     | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     |
+  | 5 | C     | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     |
+  | 6 | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     |
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ```
 </details>
 
@@ -588,27 +658,6 @@ bundle exec fretboard --tunings-list
   | 5 | A | A#/Bb | B | C     | C#/Db | D     | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A  |
   | 6 | F | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D     | D#/Eb | E     | F  |
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ```
-</details>
-
-<details>
-  <summary>G Tuning (tuning_g)</summary>
-
-  ```
-  bundle exec fretboard --draw-tuning tuning_g
-  ```
-
-  ```
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  | № | 0     | 1     | 2 | 3     | 4     | 5     | 6     | 7 | 8     | 9 | 10    | 11    | 12    |
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  | 1 | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     |
-  | 2 | D     | D#/Eb | E | F     | F#/Gb | G     | G#/Ab | A | A#/Bb | B | C     | C#/Db | D     |
-  | 3 | A#/Bb | B     | C | C#/Db | D     | D#/Eb | E     | F | F#/Gb | G | G#/Ab | A     | A#/Bb |
-  | 4 | F     | F#/Gb | G | G#/Ab | A     | A#/Bb | B     | C | C#/Db | D | D#/Eb | E     | F     |
-  | 5 | C     | C#/Db | D | D#/Eb | E     | F     | F#/Gb | G | G#/Ab | A | A#/Bb | B     | C     |
-  | 6 | G     | G#/Ab | A | A#/Bb | B     | C     | C#/Db | D | D#/Eb | E | F     | F#/Gb | G     |
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ```
 </details>
 
@@ -695,3 +744,23 @@ bundle exec fretboard --tunings-list
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ```
 </details>
+
+## 🤝 Contributing
+
+We welcome contributions! Here are some ways you can help:
+
+- 🐛 Report bugs and issues
+- 💡 Suggest new features
+- 📝 Improve documentation
+- 🧪 Add test cases
+- 🔧 Submit pull requests
+
+Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a pull request.
+
+## 🙏 Acknowledgments
+
+Thank you to all [contributors](https://github.com/afuno/fretboard/graphs/contributors) who have helped make Fretboard better!
+
+## 📄 License
+
+Fretboard is available as open source under the terms of the [MIT License](./LICENSE.md).
