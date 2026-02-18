@@ -5,7 +5,7 @@ module Fretboard
     def self.next_for(note, sharp_or_flat: :both)
       all_notes = Fretboard::Notes.all(sharp_or_flat)
 
-      note = Fretboard::NoteFormatter.format(note, sharp_or_flat: sharp_or_flat)
+      note = Fretboard::NoteFormatter.format(note, sharp_or_flat:)
 
       current_index = all_notes.find_index(note)
       raise Fretboard::Exceptions::UnknownNote, note if current_index.nil?
