@@ -20,9 +20,10 @@ RSpec.describe Fretboard::Builder do
       result.build
       result.draw
 
-      expect(Fretboard::Console).to(
-        have_received(:print_table).with(*data).once
-      )
+      expect(Fretboard::Console)
+        .to have_received(:print_table)
+        .with(*data)
+        .once
     end
   end
 

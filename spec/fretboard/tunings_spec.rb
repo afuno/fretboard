@@ -121,28 +121,36 @@ RSpec.describe Fretboard::Tunings do
     it "calls Console.print_table once" do
       draw_list
 
-      expect(Fretboard::Console).to have_received(:print_table).once
+      expect(Fretboard::Console)
+        .to have_received(:print_table)
+        .once
     end
 
     it "passes correct headings" do
       draw_list
 
-      expect(Fretboard::Console).to have_received(:print_table).with(%w[Tuning Notes], anything)
+      expect(Fretboard::Console)
+        .to have_received(:print_table)
+        .with(%w[Tuning Notes], anything)
     end
 
     it "passes 27 rows" do
       draw_list
 
-      expect(Fretboard::Console).to have_received(:print_table).with(anything, having_attributes(size: 27))
+      expect(Fretboard::Console)
+        .to have_received(:print_table)
+        .with(anything, having_attributes(size: 27))
     end
 
     it "formats enharmonic notes with '/'" do
       draw_list
 
-      expect(Fretboard::Console).to have_received(:print_table).with(
-        anything,
-        include(include(match(%r{/})))
-      )
+      expect(Fretboard::Console)
+        .to have_received(:print_table)
+        .with(
+          anything,
+          include(include(match(%r{/})))
+        )
     end
   end
 
