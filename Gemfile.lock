@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fretboard (1.6.0)
+    fretboard (2.0.0)
       colorize (>= 0.8)
       terminal-table (>= 4.0)
       zeitwerk (>= 2.6)
