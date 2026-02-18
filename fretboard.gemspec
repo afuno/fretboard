@@ -28,14 +28,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.executables   = ["fretboard"]
 
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.7")
+  spec.required_ruby_version = Gem::Requirement.new(">= 3.0")
 
-  spec.add_dependency "activesupport", ">= 5.1"
-  spec.add_dependency "zeitwerk", ">= 2.6"
   spec.add_dependency "colorize", ">= 0.8"
   spec.add_dependency "terminal-table", ">= 4.0"
+  spec.add_dependency "zeitwerk", ">= 2.6"
 
-  spec.add_development_dependency "appraisal", ">= 2.5"
   spec.add_development_dependency "rake", ">= 13.0"
   spec.add_development_dependency "rspec", ">= 3.12"
   spec.add_development_dependency "servactory-rubocop", ">= 0.9"

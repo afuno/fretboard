@@ -13,7 +13,7 @@ module Fretboard
       next_index = current_index + 1
 
       next_note = all_notes[next_index]
-      next_note = all_notes.first if next_note.blank?
+      next_note = all_notes.first if next_note.nil?
 
       next_note
     end
